@@ -1,0 +1,117 @@
+body {
+    margin: 0 auto;
+    width: 1300px;
+    padding: 5% 0 5% 5%;
+    font-size: 20px;
+}
+
+.cbox {
+    float: left;
+}
+
+#table_corr {
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 3%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.data {
+    fill: #3987BD;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 100px;
+}
+
+td {
+    height: 100px;
+    width: 100px;
+}
+
+table, td {
+    border: 1px solid #CDCDCD;
+}
+
+.form-board {
+    color: black;
+    background-color: white;
+    border: 1px solid #D0D0D0;
+    box-shadow: inset 0px 0px 1px 0px #ABABAB;
+    padding: 5%;
+    width: 80%;
+}
+
+.form-check {
+    position: relative;
+    padding-left: 2em;
+    padding-right: 0.5em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.form-check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #D0D0D0;
+    border-radius: 10%;
+}
+
+.form-check:hover input~.checkbox-mark {
+    background-color: #ccc;
+}
+
+.form-check input:checked~.checkbox-mark {
+    background-color: white;
+}
+
+.checkbox-mark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.form-check input:checked~.checkbox-mark:after {
+    display: block;
+}
+
+.form-check .checkbox-mark:after {
+    left: 6px;
+    top: 2.5px;
+    width: 5px;
+    height: 10px;
+    border: solid #64bdff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.interactive-wrapper {
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    width: 500px;
+}  
+img{
+    margin-left: 550px;
+}

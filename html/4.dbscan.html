@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+  　
+  <link href="../css/dbscan.css" rel="stylesheet" type="text/css" />
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/d3.min.js"></script>
+  <script src="../js/choose.js"></script>
+  <script src="../js/generate.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/dbscan.js"></script>
+  <script src="../js/dbmain.js"></script>
+  <div>
+    <h1 style="text-align: center;">DBSCAN算法</h1>
+    <p> DBSCAN（Density-Based Spatial Clustering of Applications with
+      Noise）是一个出现得比较早（1996年），比较有代表性的基于密度的聚类算法。算法的主要目标是相比基于划分的聚类方法和层次聚类方法，需要更少的领域知识来确定输入参数；发现任意形状的聚簇；在大规模数据库上更好的效率。DBSCAN能够将足够高密度的区域划分成簇，并能在具有噪声的空间数据库中发现任意形状的簇。
+    </p>
+
+  </div>
+  <div id="button_area2">
+  <div id="svg_area" style="margin-top: 40px;"></div>
+
+  </div>
+  <div id="button_area1" style="margin-left: 40%;">
+  <script>restart(2);</script>
+    <br>
+  </div>
+
+  <div id="button_area" style="margin-left: 40%;margin-top: -50px;">
+    <div class="button" onclick="bchangeData()">
+      <p>更换数据</p>
+    </div>
+    <select id='dataset' onchange="changeData()" class="option">
+      <option value=0>Uniform Points</option>
+      <option value=1>Gaussian Mixture</option>
+      <option selected value=2>Smiley Face</option>
+      <option value=3>Density Bars</option>
+      <option value=4>Packed Circles</option>
+      <option value=5>Pimpled Smiley</option>
+      <option value=6>DBSCAN Rings</option>
+      <option value=7>Example A</option>
+
+    </select>
+
+  </div>
+
+<div style="clear: both;"><a style="margin-right: 20px;" href="../index.html">相关性</a><a style="margin-right: 20px;" href="2.OLS.html">最小二乘</a><a href="3.kmeans.html">KMeans</a></div>  
+  
+  </body>
+
+</html>

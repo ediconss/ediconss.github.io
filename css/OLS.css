@@ -1,0 +1,150 @@
+body {
+    margin: 0 auto;
+    width: 1300px;
+    padding: 5% 0 5% 5%;
+    font-size: 20px;
+}
+
+.cbox {
+    float: left;
+}
+
+h1 {
+    text-align: center;
+}
+
+#table_corr {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.visualization-section {
+    margin: 0 auto;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+}
+
+.ols {
+    stroke-width: 4px;
+    stroke: #3987BD;
+}
+
+.visualization-wrapper {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+.visualization-wrapper svg, .visualization-wrapper canvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.visualization-section img {
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    height: 100px;
+    width: 100px;
+}
+
+table, td {
+    border: 1px solid #CDCDCD;
+}
+
+.sse {
+    fill: #3987BD;
+    fill-opacity: 0.2;
+    stroke-width: 1px;
+    stroke: #3987BD;
+}
+
+.data {
+    fill: #3987BD;
+    cursor: pointer;
+}
+
+.form-check {
+    position: relative;
+    padding-left: 2em;
+    padding-right: 0.5em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.form-check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #D0D0D0;
+    border-radius: 10%;
+}
+
+.form-check:hover input~.checkbox-mark {
+    background-color: #ccc;
+}
+
+.form-check input:checked~.checkbox-mark {
+    background-color: white;
+}
+
+.checkbox-mark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.form-check input:checked~.checkbox-mark:after {
+    display: block;
+}
+
+.form-check .checkbox-mark:after {
+    left: 6px;
+    top: 2.5px;
+    width: 5px;
+    height: 10px;
+    border: solid #64bdff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.interactive-wrapper {
+    border: 1px solid gray;
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    width: 500px;
+    padding-top: 20px;
+}

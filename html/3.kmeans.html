@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>K-Means 聚类</title>
+</head>
+
+<body>
+
+  　
+  <link href="../css/kmeans.css" rel="stylesheet" type="text/css" />
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/d3.min.js"></script>
+  <script src="../js/choose.js"></script>
+  <script src="../js/generate.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/kmeans.js"></script>
+  <div style="padding: 0 5%  0  5% ;font-size: 20px;">
+    <h1 style="text-align: center;"> k均值聚类算法</h1>
+    k均值聚类算法（k-means clustering algorithm）
+    是一种迭代求解的聚类分析算法，其步骤是:
+    <ul>
+      <li>预将数据分为K组，则随机选取K个对象作为初始的聚类中心</li>
+      <li>然后计算每个对象与各个种子聚类中心之间的距离，把每个对象分配给距离它最近的聚类中心。
+        聚类中心以及分配给它们的对象就代表一个聚类。
+      </li>
+      <li>每分配一个样本，聚类的聚类中心会根据聚类中现有的对象被重新计算。这个过程将不断重复直到满足某个终止条件。
+      </li>
+      <li>终止条件可以是没有（或最小数目）对象被重新分配给不同的聚类，没有（或最小数目）聚类中心再发生变化，误差平方和局部最小。
+      </li>
+    </ul>
+    
+  </div>
+  <div id="svg_area" style="margin: 10px 5% 0 5%;"></div>
+
+
+  <div id="button_area">
+    <!-- <span style="float: left;margin-top: 8px;font-size: 17px;">选择如何分配质心</span> -->
+    <select id='methedset' onchange="changeMethed()" class="option" style="float: left;">
+      <option value="0">自己选择</option>
+      <option selected value="1">随机</option>
+      <option value="2">离中心最远</option>
+    </select>
+    <div class="button" onclick="bchangeData()">更换数据</div>
+    <select id='dataset' onchange="changeData()" class="option" style="float: left;">
+      <option value=0>Uniform Points</option>
+      <option value=1>Gaussian Mixture</option>
+      <option selected value=2>Smiley Face</option>
+      <option value=3>Density Bars</option>
+      <option value=4>Packed Circles</option>
+      <option value=5>Pimpled Smiley</option>
+      <option value=6>DBSCAN Rings</option>
+      <option value=7>Example A</option>
+    </select>
+
+  </div>
+<br/>
+<br/>
+ <div style="clear: both;"><a style="margin-right: 20px;" href="../index.html">相关性</a><a style="margin-right: 20px;" href="2.OLS.html">最小二乘</a><a href="4.dbscan.html">dbscan</a></div>  
+  <script>restart(1, 2);
+  </script>
+</body>
+
+</html>
