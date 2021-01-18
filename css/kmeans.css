@@ -64,7 +64,7 @@ text.choice_title {
     height: 100px;
     position: absolute;
     width: 800px;
-    left: 70%;
+    left: 75%;
     -webkit-transform: translate(-50%, -50%);
             -moz-transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
@@ -76,9 +76,9 @@ text.choice_title {
 } */
 #next_centroid{
     margin-top: 50px;
-    margin-left: -430px;
+    margin-left: -440px;
 }
 #next_button{
     margin-top: 50px;
-    margin-left: -240px;
+    margin-left: -250px;
 }

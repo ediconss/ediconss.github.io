@@ -40,13 +40,13 @@
 
 
   <div  class="button_area" id="button_area">
-    <span style="float: left;margin-top: 8px;font-size: 17px;">选择分配质心方式</span>
+    <span style="float: left;margin-top: 8px;font-size: 17px;">选择质心方式</span>
     <select id='methedset' onchange="changeMethed()" class="option" style="float: left;margin-right: 50px;">
       <option value="0">自己选择</option>
       <option selected value="1">随机</option>
       <option value="2">离中心最远</option>
     </select>
-    <div class="button" onclick="bchangeData()">更换数据</div>
+    <div class="button" onclick="bchangeData()" style="margin-right: 10px;">更换数据</div>
     <select id='dataset' onchange="changeData()" class="option" style="float: left;">
       <option value=0>均匀分布</option>
       <option value=1>高斯混合</option>
