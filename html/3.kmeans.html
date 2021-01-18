@@ -16,7 +16,7 @@
   <script src="../js/config.js"></script>
   <script src="../js/main.js"></script>
   <script src="../js/kmeans.js"></script>
-  <div style="padding: 0 5%  0  5% ;font-size: 20px;">
+  <div style="padding: 0 5%  0  5% ;font-size: 20px;float: left;width: 40%;">
     <h1 style="text-align: center;"> k均值聚类算法</h1>
     k均值聚类算法（k-means clustering algorithm）
     是一种迭代求解的聚类分析算法，其步骤是:
@@ -32,32 +32,39 @@
     </ul>
     
   </div>
+
+  <div style="float: left;">
+
+
   <div id="svg_area" style="margin: 10px 5% 0 5%;"></div>
 
 
-  <div id="button_area">
-    <!-- <span style="float: left;margin-top: 8px;font-size: 17px;">选择如何分配质心</span> -->
-    <select id='methedset' onchange="changeMethed()" class="option" style="float: left;">
+  <div  class="button_area">
+    <span style="float: left;margin-top: 8px;font-size: 17px;">选择分配质心</span>
+    <select id='methedset' onchange="changeMethed()" class="option" style="float: left;margin-right: 50px;">
       <option value="0">自己选择</option>
       <option selected value="1">随机</option>
       <option value="2">离中心最远</option>
     </select>
     <div class="button" onclick="bchangeData()">更换数据</div>
     <select id='dataset' onchange="changeData()" class="option" style="float: left;">
-      <option value=0>Uniform Points</option>
-      <option value=1>Gaussian Mixture</option>
-      <option selected value=2>Smiley Face</option>
-      <option value=3>Density Bars</option>
-      <option value=4>Packed Circles</option>
-      <option value=5>Pimpled Smiley</option>
-      <option value=6>DBSCAN Rings</option>
-      <option value=7>Example A</option>
+      <option value=0>均匀分布</option>
+      <option value=1>高斯混合</option>
+      <option selected value=2>笑脸</option>
+      <option value=3>发散型</option>
+      <option value=4>填充圆点</option>
+      <option value=5>笑脸</option>
+      <option value=6>密度聚类</option>
+      <option value=7>案例A</option>
     </select>
-
   </div>
-<br/>
-<br/>
- <div style="clear: both;"><a style="margin-right: 20px;" href="../index.html">相关性</a><a style="margin-right: 20px;" href="2.OLS.html">最小二乘</a><a href="4.dbscan.html">dbscan</a></div>  
+</div>
+<div id="button_area" class="button_area" style="top: 580px;margin-left: 100px;">
+
+ 
+
+</div>
+<div style="clear: both;margin-left: 5%;margin-top:600px;"><a href="4.dbscan.html">DBSCAN 聚类</a></div> 
   <script>restart(1, 2);
   </script>
 </body>

@@ -85,3 +85,20 @@ body {
 #button_area2{
     font-size:medium;
 }
+#next_button{
+    clear: both;
+    margin-top: 10px;
+}
+#pause{
+    clear: both;
+    margin-top: 10px;
+}
+#eps_value{
+    margin-left: 120px
+}
+#button_area2 input{
+    margin-left: 120px
+}
+#minPoints_value{
+    margin-left: 120px
+}

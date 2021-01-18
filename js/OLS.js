@@ -1,7 +1,7 @@
 
   window.onload = function () {
-    var margin = { top: 20, right: 20, bottom: 30, left: 40 },
-      width = 1300 - margin.left - margin.right,
+    var margin = { top: 20, right: 20, bottom: 30, left: 683.638 },
+      width =700,
       height = 500 - margin.top - margin.bottom;
 
     var x = d3.scale.linear()
@@ -29,13 +29,13 @@
       dur = 100;
 
 
-    var svg_ols = d3.select("#svg_ols").append("svg").attr("display", "inline-block");
+    var svg_ols = d3.select("#svg_ols").append("svg").attr("display", "inline-block").attr("width", "700px").attr("heigh", "500px");
 
 
-    var x_scale_ols = d3.scale.linear().domain([0, 20]),
-      y_scale_ols = d3.scale.linear().domain([0, 15]);
-
-
+    var x_scale_ols = d3.scale.linear().domain([0, 20])
+      y_scale_ols = d3.scale.linear().domain([0, 15])
+      var x_scale_ols_n= d3.scale.linear().domain([0, 20]).range([0, width]);
+      y_scale_ols_n= d3.scale.linear().domain([0, 15]).range([0, height]);
     var x_axis_ols = d3.svg.axis().scale(x_scale_ols).orient("bottom").ticks(5),
       y_axis_ols = d3.svg.axis().scale(y_scale_ols).orient("left").ticks(5);
 
@@ -56,7 +56,7 @@
 
 
     var containerOLS = svg_ols.append("g").attr("clip-path", "url(#viewOLS)")
-      .attr("width", "500px").attr("heigh", "500px")
+      .attr("width", "1500px").attr("heigh", "500px")
       .call(tipOLS).attr('id', 'container');
 
 
@@ -95,7 +95,7 @@
         .on('mouseover', function (d) { tipOLS.show(d, this) })
         .on('mouseout', tipOLS.hide);
 
-
+  
       containerOLS.selectAll("line.ols")
         .data([1])
         .enter()
@@ -180,7 +180,17 @@
           .attr("x1", x0)
           .attr("y1", y_scale_ols(b0 + b1 * x_scale_ols.invert(x0)))
           .attr("x2", x1)
-          .attr("y2", y_scale_ols(b0 + b1 * x_scale_ols.invert(x1)));
+          .attr("y2", y_scale_ols(b0 + b1 * x_scale_ols.invert(x1)))
+        // var x_scale_ols_n= d3.scale.linear().domain([0, 20]).range([0, width]);
+        // y_scale_ols_n=
+          // var line_generator = d3.svg.line()//d3中绘制曲线的函数
+          // .x(function(d, i){return x_scale_ols_n(i)})//曲线中x的值
+          // .y(function(d){return y_scale_ols_n(d)})//曲线中y的值
+          // .interpolate("basis")//把曲线设置光滑
+          // containerOLS.select('path').remove()
+          // containerOLS.append("path")
+          // .attr("d", line_generator(ydata))
+
 
         containerOLS.selectAll("rect.sse")
           .transition()
@@ -188,8 +198,7 @@
           .attr("x", function (d) { return x_scale_ols(d[keys_ols[x_index]]) })
           .attr("y", function (d) { return y_scale_ols(Math.max(d[keys_ols[y_index]], b0 + b1 * d[keys_ols[x_index]])); })
           .attr("width", function (d) { return Math.abs(y_scale_ols(d[keys_ols[y_index]]) - y_scale_ols(b0 + b1 * d[keys_ols[x_index]])); })
-          .attr("height", function (d) { return Math.abs(y_scale_ols(d[keys_ols[y_index]]) - y_scale_ols(b0 + b1 * d[keys_ols[x_index]])); });
-
+          .attr("height", function (d) { return Math.abs(y_scale_ols(d[keys_ols[y_index]]) - y_scale_ols(b0 + b1 * d[keys_ols[x_index]])); })
       }
 
 
@@ -267,8 +276,10 @@
 
         var coords = d3.mouse(this);
 
-        var xi = x.invert(coords[0] - margin.left);
+        var xi = x.invert(coords[0]);
         var yi = y.invert(coords[1] - margin.right);
+        console.log(coords[0])
+        console.log(xi)
         data_ols.push({ "X1": "5", "X2": "5", "X3": "5", "X4": "8", "X": xi * 20, "Y1": "5.68", "Y2": "4.74", "Y3": "5.73", "Y4": "6.89", "Y": yi * 15 })
 
 
@@ -281,7 +292,8 @@
 
       }
 
-
+// 50   0
+// 0    20
       d3.select('#container')
         .append("rect")
         .attr("class", "target_rect")

@@ -14,11 +14,6 @@ body {
     cursor: pointer;
     margin-left: 3%;
 }
-
-h1 {
-    text-align: center;
-}
-
 .data {
     fill: #3987BD;
     cursor: pointer;
@@ -113,5 +108,5 @@ table, td {
     width: 500px;
 }  
 img{
-    margin-left: 550px;
+    margin-left: 40%;
 }

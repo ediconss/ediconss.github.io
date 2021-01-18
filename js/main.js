@@ -14,14 +14,14 @@ var dbscan_dat = function() { return dbscan_all(); };
 var dbscan_nonunique = function() { return dbscan_borders(); };
 
 var  choicesData= [
-    {name: "Uniform Points", choice: unif_dat, txtpos_x: -14.0},
-    {name: "Gaussian Mixture", choice: threenorm_dat, txtpos_x: -4.5},
-    {name: "Smiley Face", choice: smiley_dat, txtpos_x: 6.6},
+    {name: "均匀分布", choice: unif_dat, txtpos_x: -14.0},
+    {name: "高斯混合", choice: threenorm_dat, txtpos_x: -4.5},
+    {name: "笑脸", choice: smiley_dat, txtpos_x: 6.6},
     {name: "Density Bars", choice: density, txtpos_x: -13.6},
     {name: "Packed Circles", choice: circles, txtpos_x: -3.9},
     {name: "Pimpled Smiley", choice: pimples_dat, txtpos_x: 5.8},
-    {name: "DBSCAN Rings", choice: dbscan_dat, txtpos_x: -14.0},
-    {name: "Example A", choice: dbscan_nonunique, txtpos_x: -3.2}
+    {name: "密度聚类", choice: dbscan_dat, txtpos_x: -14.0},
+    {name: "案例A", choice: dbscan_nonunique, txtpos_x: -3.2}
 ];
 
 var choicesMethed = [{name: "自己选择", choice: "user", txtpos_x: -13.2},

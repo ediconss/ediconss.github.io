@@ -7,7 +7,7 @@
     var sf_corr = 0.25;
     var xScaleCorr = d3.scale.linear();
     var yScaleCorr = d3.scale.linear();
-    var pScaleCorr = d3.scale.linear().domain([-1, 0, 1]).range(['#F2F7FD', '#61A7D2', '#08306B']);
+    var pScaleCorr = d3.scale.linear().domain([-1, 0, 1]).range(['#4860D1', '#DCDCDC', '#CF463D']);
     var xScaleBarCorr = d3.scale.linear().domain([-1, 1]);
 
     var xAxisCorr = d3.svg.axis().scale(xScaleCorr).orient("bottom").ticks(0);

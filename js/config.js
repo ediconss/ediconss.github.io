@@ -1,5 +1,5 @@
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 660 - margin.left - margin.right,
+    width = 1660 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
 
 var x = d3.scale.linear()
@@ -39,8 +39,8 @@ function setup() {
     d3.select("svg").remove();
 
     svg = d3.select("#svg_area").append("svg")
-    .attr("width", "100%")
-    .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+    .attr("width", "700px").attr("height", "500px")
+    .attr("viewBox", "680 0 300 300")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -49,7 +49,7 @@ function setup() {
     .attr("x", 0)
     .attr("y", 0)
     .attr("width", "100%")
-    .attr("height", "100%")
+  
     .style("fill", "white");
 
     d3.select("#button_area").selectAll("input").remove();

@@ -9,9 +9,7 @@ body {
     float: left;
 }
 
-h1 {
-    text-align: center;
-}
+
 
 #table_corr {
     font-size: 12px;
@@ -61,7 +59,7 @@ table {
 }
 
 td {
-    height: 100px;
+    height: 80px;
     width: 100px;
 }
 
@@ -145,6 +143,6 @@ table, td {
     width: auto;
     margin: 0 auto;
     text-align: center;
-    width: 500px;
+    /* width: 500px; */
     padding-top: 20px;
 }

@@ -15,7 +15,7 @@
 <link href="../css/regression.css" rel="stylesheet" type="text/css" />
 
 <body>
-    <div>
+    <div id='left' style="float: left;width: 40%;">
         <div>
             <h1>相关性</h1>
               <p>相关性是一种刻画两个变量之间线性关系的度量。相关性的数学定义是</p>
@@ -99,11 +99,18 @@
                         </tr>
                     </tbody>
                 </table>
-                <div id="svgCorr" style="width: 700px;height: 500px;float: left;margin-top: 30px;margin-left: 20px;">
-
-                </div>
             </div>
         </div>
+    </div>
+
+
+        <div id="svgCorr" style="width: 700px;height: 500px;float: left;margin-top: 30px;margin-left: 20px;position: fixed;left:50%">
+
+        </div>
+        <div style="clear: both;"><a style="margin-right: 20px;" href="../html/2.OLS.html">最小二乘</a></div>
+        
+       
+        
 </body>
 <script src="../js/regression.js"></script>
 
