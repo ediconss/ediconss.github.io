@@ -71,6 +71,14 @@ text.choice_title {
             -o-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
 }
-#button_area div{
+/* #button_area div{
     margin-right: 90px;
+} */
+#next_centroid{
+    margin-top: 50px;
+    margin-left: -430px;
+}
+#next_button{
+    margin-top: 50px;
+    margin-left: -240px;
 }
