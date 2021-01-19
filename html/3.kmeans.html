@@ -5,7 +5,7 @@
   <title>K-Means 聚类</title>
 </head>
 
-<body>
+<body style="font-size: 20px;">
 
   　
   <link href="../css/kmeans.css" rel="stylesheet" type="text/css" />
@@ -16,8 +16,8 @@
   <script src="../js/config.js"></script>
   <script src="../js/main.js"></script>
   <script src="../js/kmeans.js"></script>
-  <div style="padding: 0 5%  0  5% ;font-size: 20px;float: left;width: 40%;">
-    <h1 style="text-align: center;"> K-Means聚类算法</h1>
+  <div  style="height: 840px;;padding-top: 50px;padding-left: 100px;padding-right: 10px;font-size: 20px;float: left;width: 40%;background: #FFF1F9;">
+    <h1> K-Means聚类算法</h1>
     k均值聚类算法（k-means clustering algorithm）
     是一种迭代求解的聚类分析算法，其步骤是:
     <ul>
@@ -36,7 +36,8 @@
   <div style="float: left;width: 50%;height: 100%;">
 
 
-  <div id="svg_area" style="margin: 10px 5% 0 5%;"></div>
+  <div id="svg_area" style="margin-top: 30px;">
+  </div>
 
 
   <div  class="button_area" id="button_area">
@@ -46,7 +47,7 @@
       <option selected value="1">随机</option>
       <option value="2">离中心最远</option>
     </select>
-    <div class="button" onclick="bchangeData()" style="margin-right: 10px;margin-left: 100px;">更换数据</div>
+    <div class="button" onclick="bchangeData()" style="margin-right: 10px;">更换数据</div>
     <select id='dataset' onchange="changeData()" class="option" style="float: left;">
       <option value=0>均匀分布</option>
       <option value=1>高斯混合</option>

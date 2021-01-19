@@ -13,10 +13,10 @@ text.choice_title {
 img {
     margin-top: 15px;
 }
-
+/* 
 body {
     padding: 1% 5% 5% 5%;
-}
+} */
 
 .option {
     float: left;
@@ -94,11 +94,11 @@ body {
     margin-top: 10px;
 }
 #eps_value{
-    margin-left: 120px
+    margin-left: 220px
 }
 #button_area2 input{
-    margin-left: 120px
+    margin-left: 220px
 }
 #minPoints_value{
-    margin-left: 120px
+    margin-left: 220px
 }

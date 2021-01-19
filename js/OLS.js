@@ -1,11 +1,11 @@
 
   window.onload = function () {
     var margin = { top: 30, right: 20, bottom: 30, left: 683.638 },
-      width =800,
+      width =940,
       height = 600 - margin.top - margin.bottom;
 
     var x = d3.scale.linear()
-      .range([0, width]);
+      .range([0, width+100]);
 
     var y = d3.scale.linear()
       .range([height, 0]);
@@ -29,7 +29,8 @@
       dur = 100;
 
 
-    var svg_ols = d3.select("#svg_ols").append("svg").attr("display", "inline-block").attr("width", "700px").attr("heigh", "500px");
+    var svg_ols = d3.select("#svg_ols").append("svg").attr("display", "inline-block")
+    .attr("width", "00px").attr("heigh", "500px");
 
 
     var x_scale_ols = d3.scale.linear().domain([0, 20])
@@ -278,7 +279,7 @@
 
         var xi = x.invert(coords[0]);
         var yi = y.invert(coords[1] - margin.right);
-        data_ols.push({ "X1": "5", "X2": "5", "X3": "5", "X4": "8", "X": xi * 20, "Y1": "5.68", "Y2": "4.74", "Y3": "5.73", "Y4": "6.89", "Y": yi * 15 })
+        data_ols.push({ "X1": "5", "X2": "5", "X3": "5", "X4": "8", "X": xi * 22, "Y1": "5.68", "Y2": "4.74", "Y3": "5.73", "Y4": "6.89", "Y": yi * 15 })
 
 
 
@@ -347,7 +348,7 @@
 
     function drawOls() {
       var parent = d3.select('#svg_ols'),
-        w = parent.node().clientWidth+100,
+        w = parent.node().clientWidth,
         h = 600,
         padding = 50;
 

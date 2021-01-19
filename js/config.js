@@ -41,10 +41,9 @@ function setup() {
     svg = d3.select("#svg_area").append("svg")
     .attr("width", "100%")
     .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
-    // .attr("viewBox", "600 0 " + 500+ " " + 300)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-    // .attr("width", "700px").attr("height", "500px");
+
 
     d3.select("#svg_area").select("svg")
     .insert("rect", ":first-child")

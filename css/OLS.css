@@ -1,7 +1,5 @@
 body {
-    margin: 0 auto;
-    width: 1300px;
-    padding: 5% 0 5% 5%;
+  
     font-size: 20px;
 }
 
@@ -144,6 +142,6 @@ table, td {
     width: auto;
     margin: 0 auto;
     text-align: center;
-    /* width: 500px; */
+    width: 500px;
     padding-top: 20px;
 }

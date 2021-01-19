@@ -60,29 +60,26 @@ text.choice_title {
     user-select: none;
 }
 .button_area{
-    margin-top: 50px;
-    height: 100px;
-    position: absolute;
-    width: 800px;
-    left: 79%;
-    -webkit-transform: translate(-50%, -50%);
+    margin-top: 30px;
+    /* height: 100px; */
+    /* position: absolute; */
+    /* width: 800px; */
+    margin-left: 170px;
+    /* left: 1500px; */
+    /* -webkit-transform: translate(-50%, -50%);
             -moz-transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
             -o-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); */
 }
 /* #button_area div{
     margin-right: 90px;
 } */
 #next_centroid{
     margin-top: 50px;
-    margin-left: -540px;
+    margin-left: -570px;
 }
 #next_button{
     margin-top: 50px;
     margin-left: -250px;
-}
-.target_rect{
-    /* position: relative;
-    left:50% */
 }
