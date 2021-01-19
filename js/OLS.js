@@ -349,7 +349,7 @@
     function drawOls() {
       var parent = d3.select('#svg_ols'),
         w = parent.node().clientWidth,
-        h = 600,
+        h = 650,
         padding = 50;
 
       x_scale_ols.range([padding, (w - padding)]);
