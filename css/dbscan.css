@@ -94,11 +94,14 @@ body {
     margin-top: 10px;
 }
 #eps_value{
+    margin-top: 30px;
     margin-left: 200px
 }
 #button_area2 input{
+    /* margin-top: 20px; */
     margin-left: 200px
 }
 #minPoints_value{
+    /* margin-top: 20px; */
     margin-left: 200px
 }
