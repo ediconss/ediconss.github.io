@@ -316,7 +316,7 @@
  
         var parent = d3.select('#svgCorr'),
             w = parent.node().clientWidth,
-            h = 700,
+            h = parent.node().clientHeight,
             hBar = 70,
             padding = 75;
 

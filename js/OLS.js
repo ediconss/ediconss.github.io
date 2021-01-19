@@ -1,8 +1,10 @@
 
   window.onload = function () {
+    var parent = d3.select('#svg_ols')
+    
     var margin = { top: 30, right: 20, bottom: 30, left: 683.638 },
-      width =950,
-      height = 600 - margin.top - margin.bottom;
+      width =parent.node().clientWidth,
+      height = parent.node().clientHeight - margin.top - margin.bottom;
 
     var x = d3.scale.linear()
       .range([0, width+100]);
@@ -349,7 +351,7 @@
     function drawOls() {
       var parent = d3.select('#svg_ols'),
         w = parent.node().clientWidth,
-        h = 650,
+        h =parent.node().clientHeight,
         padding = 50;
 
       x_scale_ols.range([padding, (w - padding)]);
