@@ -105,7 +105,8 @@ table, td {
     width: auto;
     margin: 0 auto;
     text-align: center;
-    width: 540px;
+    margin-left: 14px;
+    width: 560px;
 }  
 img{
     margin-left: 40%;

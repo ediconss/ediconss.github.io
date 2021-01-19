@@ -334,7 +334,7 @@
 
 
         legend.attr("x", padding).attr("y", lineWidth+20).attr("width", w - 2 * padding).attr("height", hBar - padding - lineWidth+25);
-        barCorr.attr("y1", lineWidth).attr("y2", hBar - padding);
+        barCorr.attr("y1", lineWidth+19).attr("y2", hBar - padding+46);
 
   
         clipCorr.attr("x", padding).attr("y", padding).attr("width", w - 2 * padding).attr("height", h - 2 * padding);
