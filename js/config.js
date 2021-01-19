@@ -40,7 +40,7 @@ function setup() {
 
     svg = d3.select("#svg_area").append("svg")
     .attr("width", "100%")
-    .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+    .attr("viewBox", "0 0 " + (width + margin.left + margin.right+70) + " " + (height + margin.top + margin.bottom))
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
