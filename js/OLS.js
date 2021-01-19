@@ -1,8 +1,8 @@
 
   window.onload = function () {
-    var margin = { top: 20, right: 20, bottom: 30, left: 683.638 },
-      width =700,
-      height = 500 - margin.top - margin.bottom;
+    var margin = { top: 30, right: 20, bottom: 30, left: 683.638 },
+      width =800,
+      height = 600 - margin.top - margin.bottom;
 
     var x = d3.scale.linear()
       .range([0, width]);
@@ -278,8 +278,6 @@
 
         var xi = x.invert(coords[0]);
         var yi = y.invert(coords[1] - margin.right);
-        console.log(coords[0])
-        console.log(xi)
         data_ols.push({ "X1": "5", "X2": "5", "X3": "5", "X4": "8", "X": xi * 20, "Y1": "5.68", "Y2": "4.74", "Y3": "5.73", "Y4": "6.89", "Y": yi * 15 })
 
 
@@ -349,8 +347,8 @@
 
     function drawOls() {
       var parent = d3.select('#svg_ols'),
-        w = parent.node().clientWidth,
-        h = 500,
+        w = parent.node().clientWidth+100,
+        h = 600,
         padding = 50;
 
       x_scale_ols.range([padding, (w - padding)]);
@@ -364,8 +362,8 @@
 
       clip_ols.attr("x", padding).attr("y", padding).attr("width", w - 2 * padding).attr("height", h - 2 * padding);
 
-      xaxisTextOLS.attr("transform", "translate(" + (w / 2) + "," + (h - padding / 4) + ")");
-      yaxisTextOLS.attr("transform", "translate(" + (padding / 4) + "," + (h / 2) + ")rotate(-90)");
+      xaxisTextOLS.attr("transform", "translate(" + (w / 2) + "," + (h+10 - padding / 4) + ")");
+      yaxisTextOLS.attr("transform", "translate(" + (padding / 4+8) + "," + (h / 2) + ")rotate(-90)");
 
       statisticsCalcOLS(0);
     }

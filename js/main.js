@@ -38,7 +38,6 @@ function restart(i1,i2) {
     .attr("class", "own_region")
     .attr("opacity", 0.5);
     kmeans_init = choicesMethed[i1].choice;
-    console.log(kmeans_init)
     var cdata = choicesData[i2].choice;
     data=cdata()
      draw(data);

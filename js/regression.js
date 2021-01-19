@@ -113,10 +113,10 @@
     }
 
     function add_data_corr() {
-        console.log(x_key)
- 
-        xaxisTextCorr.text(keys_corr[x_key]);
-        yaxisTextCorr.text(keys_corr[y_key]);
+        // console.log(x_key)
+        var names=new Array('萼片长度','萼片宽度', '花瓣长度',  '花瓣宽度','萼片长度','萼片宽度', '花瓣长度', '花瓣宽度')
+        xaxisTextCorr.text(names[x_key]);
+        yaxisTextCorr.text(names[y_key]);
 
  
         tipCorr.html(function (d, i) {
@@ -233,7 +233,7 @@
         var variables;
         for (var i = 0; i < keys_corr.length - 1; i++) {
             for (var j = 0; j < keys_corr.length - 1; j++) {
-            
+                // console.log(data_corr)
                 var xdata = extractColumn(data_corr, keys_corr[i]),
                     ydata = extractColumn(data_corr, keys_corr[j]),
                     result = corr_coef_calc(xdata, ydata);
@@ -318,7 +318,7 @@
             w = parent.node().clientWidth,
             h = 500,
             hBar = 70,
-            padding = 50;
+            padding = 75;
 
  
         xScaleCorr.range([padding, (w - padding)]);
@@ -329,11 +329,11 @@
         svgCorr.attr("width", w).attr("height", h);
 
         xAxisGroupCorr.attr("transform", "translate(0," + (h - padding) + ")").call(xAxisCorr);
-        xAxisGroupBarCorr.attr("transform", "translate(0," + (hBar - padding) + ")").call(xAxisBarCorr);
+        xAxisGroupBarCorr.attr("transform", "translate(0," + (hBar - padding+40) + ")").call(xAxisBarCorr);
         yAxisGroupCorr.attr("transform", "translate(" + padding + ",0)").call(yAxisCorr);
 
 
-        legend.attr("x", padding).attr("y", lineWidth).attr("width", w - 2 * padding).attr("height", hBar - padding - lineWidth);
+        legend.attr("x", padding).attr("y", lineWidth+20).attr("width", w - 2 * padding).attr("height", hBar - padding - lineWidth+25);
         barCorr.attr("y1", lineWidth).attr("y2", hBar - padding);
 
   

@@ -76,9 +76,13 @@ text.choice_title {
 } */
 #next_centroid{
     margin-top: 50px;
-    margin-left: -570px;
+    margin-left: -560px;
 }
 #next_button{
     margin-top: 50px;
     margin-left: -250px;
+}
+.target_rect{
+    position: relative;
+    left:50%
 }

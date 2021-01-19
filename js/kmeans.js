@@ -26,7 +26,14 @@ function bchangeData(){
 $("#dataset").val(ss)
 changeData()
 }
-
+function bchangeMethed(){
+    var dd= parseInt($("#methedset").val())+1
+    if(dd>2){
+        dd=0
+    }
+ $("#methedset").val(dd)
+ changeMethed()
+}
 function reassign_points() {
     for(var j = 0; j < data.length; j++){
         var ibest = 0;
@@ -299,7 +306,7 @@ function get_centroids() {
             .attr("class", "target_rect")
             .attr("width", "100%")
             .attr("height", "100%")
-            .attr("opacity", 0.0)
+            .attr("opacity", 1)
             .on("mousedown", click)
             .on("mousemove", mousemove)
             .on("mouseout", mouseout)

@@ -55,12 +55,13 @@ body {
 }
 
 table {
+    text-align: center;
     border-collapse: collapse;
 }
 
 td {
-    height: 80px;
-    width: 100px;
+    height: 100px;
+    width: 150px;
 }
 
 table, td {
