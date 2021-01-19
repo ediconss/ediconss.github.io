@@ -1,6 +1,6 @@
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 1660 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+var margin = {top: 20, right: 20, bottom: 30, left: 0},
+    width = 1200 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
 
 var x = d3.scale.linear()
     .range([0, width]);
@@ -39,10 +39,12 @@ function setup() {
     d3.select("svg").remove();
 
     svg = d3.select("#svg_area").append("svg")
-    .attr("width", "700px").attr("height", "500px")
-    .attr("viewBox", "680 0 300 300")
+    .attr("width", "100%")
+    .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+    // .attr("viewBox", "600 0 " + 500+ " " + 300)
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    // .attr("width", "700px").attr("height", "500px");
 
     d3.select("#svg_area").select("svg")
     .insert("rect", ":first-child")
@@ -64,7 +66,7 @@ function draw(data) {
       .data(data)
     .enter().append("circle")
       .attr("class", "dot")
-      .attr("r", 3.5)
+      .attr("r", 7.5)
       .attr("cx", function(d, i) { return x(30 * Math.cos(i / 5)); })
       .attr("cy", function(d, i) { return y(30 * Math.sin(i / 5)); })
       .style("fill", function(d) { return color(d.cluster); })

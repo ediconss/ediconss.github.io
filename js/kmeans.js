@@ -253,11 +253,13 @@ function get_centroids() {
             .style("fill", color(1));
 
         function mousemove() {
+            console.log(d3.mouse(this))
+
             cursor.attr("transform", "translate(" + d3.mouse(this) + ")");
         }
 
         function mouseout() {
-            cursor.attr("opacity", 0.0);
+            cursor.attr("opacity", 0);
         }
 
         function mouseover() {
@@ -306,7 +308,7 @@ function get_centroids() {
             .attr("class", "target_rect")
             .attr("width", "100%")
             .attr("height", "100%")
-            .attr("opacity", 1)
+            .attr("opacity", 0.0)
             .on("mousedown", click)
             .on("mousemove", mousemove)
             .on("mouseout", mouseout)
