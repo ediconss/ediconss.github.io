@@ -71,7 +71,7 @@ body {
 
 .button p {
     margin: 0px;
-    margin-top: 3px;
+    /* margin-top: 3px; */
     font-family: "Roboto";
     text-align: center;
     text-transform: uppercase;

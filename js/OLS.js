@@ -1,7 +1,7 @@
 
   window.onload = function () {
     var margin = { top: 30, right: 20, bottom: 30, left: 683.638 },
-      width =940,
+      width =950,
       height = 600 - margin.top - margin.bottom;
 
     var x = d3.scale.linear()
