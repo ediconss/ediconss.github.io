@@ -46,7 +46,7 @@ text.choice_title {
 .button {
     float: left;
     background: #3498db;
-    width: 100px;
+    width: 15%;
     height: 29px;
     padding: 4px 0;
     border-radius: 3px;
@@ -72,14 +72,13 @@ text.choice_title {
             -o-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); */
 }
-/* #button_area div{
-    margin-right: 90px;
-} */
-#next_centroid{
-    margin-top: 60px;
-    margin-left: -600px;
+
+ #next_centroid{
+    width: 100px;
+    margin-right: 250px;
+    margin-bottom: 30px;
 }
 #next_button{
-    margin-top: 60px;
-    margin-left: -250px;
-}
+    width: 100px;
+ 
+} 

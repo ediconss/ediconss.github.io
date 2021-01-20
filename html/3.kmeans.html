@@ -5,7 +5,7 @@
   <title>K-Means 聚类</title>
 </head>
 
-<body style="font-size: 20px;">
+<body style="font-size: 20px;height: 100%;">
 
   　
   <link href="../css/kmeans.css" rel="stylesheet" type="text/css" />
@@ -16,7 +16,7 @@
   <script src="../js/config.js"></script>
   <script src="../js/main.js"></script>
   <script src="../js/kmeans.js"></script>
-  <div  style="height: 620px;;padding-top: 50px;padding-left: 55px;padding-right: 55px;font-size: 20px;float: left;width: 40%;background: #FFF1F9;">
+  <div  style="height: 120%;padding-top: 50px;padding-left: 55px;padding-right: 55px;font-size: 20px;float: left;width: 40%;background: #FFF1F9;">
     <h1> K-Means聚类算法</h1>
     k均值聚类算法（k-means clustering algorithm）
     是一种迭代求解的聚类分析算法，其步骤是:
@@ -34,22 +34,25 @@
 
   </div>
 
-  <div style="float: left;height: 100%;width: 50%;padding-top: 70px;padding-left: 33px;">
+  <div style="float: left;height: 100%;width: 50%;padding-top: 70px;padding-left: 3px;">
   <div id="svg_area" >
 
   </div>
 
 
-  <div  class="button_area" id="button_area">
-    <div class="button"  onclick="bchangeMethed()"  style="float: left;font-size: 17px;width: 150px;margin-right: 10px;">
+  <div  class="button_area" style="margin-left: 15%;">
+    <div style="float: left;margin-right: 80px;margin-bottom: 20px;">
+    <div class="button"  onclick="bchangeMethed()"  style="font-size: 17px;width: 120px;margin-right: 10px;">
      更换质心方式</div>
-    <select id='methedset' onchange="changeMethed()" class="option" style="float: left;margin-right: 50px;">
+    <select id='methedset' onchange="changeMethed()" class="option" >
       <option value="0">自己选择</option>
       <option selected value="1">随机</option>
       <option value="2">离中心最远</option>
     </select>
-    <div class="button" onclick="bchangeData()" style="margin-right: 10px;">更换数据</div>
-    <select id='dataset' onchange="changeData()" class="option" style="float: left;">
+  </div>
+  <div style="float: left;margin-bottom: 20px;">
+    <div class="button" onclick="bchangeData()" style="margin-right: 10px;width: 100px">更换数据</div>
+    <select id='dataset' onchange="changeData()" class="option" >
       <option value=0>均匀分布</option>
       <option value=1>高斯混合</option>
       <option selected value=2>笑脸</option>
@@ -60,6 +63,9 @@
       <option value=7>案例A</option>
     </select>
   </div>
+  <div id="button_area" style="margin-right: 80px;">
+  </div>
+</div>
 </div>
 
   <script>restart(1, 2);
