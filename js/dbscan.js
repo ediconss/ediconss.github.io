@@ -151,7 +151,7 @@ function draw_eps_balls() {
         .attr("r", x(eps) - x(0))
         .style("stroke", color(1))
         .style("stroke-width", 2)
-        .style("opacity", 0.5)
+        .style("opacity", 0)
         .style("fill", fill_color);
     } else {
         balls.attr("r", x(eps) - x(0))
