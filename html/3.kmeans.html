@@ -1,13 +1,8 @@
 <!DOCTYPE HTML>
-<html>
+<html style="height: 100%;">
 
 <head>
   <title>K-Means 聚类</title>
-</head>
-
-<body style="font-size: 20px;margin: 0;">
-
-  　
   <link href="../css/kmeans.css" rel="stylesheet" type="text/css" />
   <script src="../js/jquery.min.js"></script>
   <script src="../js/d3.min.js"></script>
@@ -16,7 +11,11 @@
   <script src="../js/config.js"></script>
   <script src="../js/main.js"></script>
   <script src="../js/kmeans.js"></script>
-  <div  style="height: 655px;padding-top: 50px;padding-left: 55px;padding-right: 55px;font-size: 20px;float: left;width: 40%;background: #FFF1F9;">
+</head>
+
+<body style="font-size: 20px;margin: 0;height: 100%;">
+   <div  style="height:91%;padding-top: 4%;font-size: 20px;float: left;;padding-left: 55px;padding-right: 55px;width: 40%;background: #FFF1F9;">
+  
     <h1> K-Means聚类算法</h1>
     k均值聚类算法（k-means clustering algorithm）
     是一种迭代求解的聚类分析算法，其步骤是:
@@ -30,11 +29,11 @@
       <li>终止条件可以是没有（或最小数目）对象被重新分配给不同的聚类，没有（或最小数目）聚类中心再发生变化，误差平方和局部最小。
       </li>
     </ul>
-    <div style="clear: both;font-size: 20px;margin-top: 100px;"><a href="4.dbscan.html">DBSCAN 聚类法</a></div> 
+    <div style="clear: both;font-size: 20px;position: absolute;bottom: 30px;"><a href="4.dbscan.html">DBSCAN 聚类法</a></div> 
 
   </div>
 
-  <div style="float: left;height: 100%;width: 50%;padding-top: 70px;padding-left: 3px;">
+  <div style="float: left;height: 90%;width: 50%;padding-top: 70px;padding-left: 3px;">
   <div id="svg_area" >
 
   </div>
