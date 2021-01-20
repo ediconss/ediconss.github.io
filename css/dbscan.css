@@ -87,10 +87,14 @@ body {
 }
 #next_button{
     clear: both;
+    position: relative;
+    left: -140px;
     margin-top: 10px;
 }
 #pause{
     clear: both;
+    position: relative;
+    left: -140px;
     margin-top: 10px;
 }
 #eps_value{
