@@ -14,26 +14,31 @@
 </head>
 
 <body style="font-size: 20px;margin: 0;height: 100%;">
-   <div  style="height:91%;padding-top: 4%;font-size: 20px;float: left;;padding-left: 55px;padding-right: 55px;width: 40%;background: #FFF1F9;">
+   <div  style="padding-top: 4%;font-size: 20px;float: left;;padding-left: 55px;padding-right: 55px;width: 40%;background: #FFF1F9;">
   
     <h1> K-Means聚类算法</h1>
-    k均值聚类算法（k-means clustering algorithm）
-    是一种迭代求解的聚类分析算法，其步骤是:
-    <ul>
-      <li>预将数据分为K组，则随机选取K个对象作为初始的聚类中心</li>
-      <li>然后计算每个对象与各个种子聚类中心之间的距离，把每个对象分配给距离它最近的聚类中心。
-        聚类中心以及分配给它们的对象就代表一个聚类。
+    K-均值聚类算法（k-means clustering algorithm）作为基于距离的聚类算法，其算法过程如下：
+    <ol>
+      <li>随机选取K个样本对象作为初始的聚类质心（中心点）</li>
+      <li>计算各样本与每个中心点的距离，并将样本划分到距离最近的质心所在簇。
       </li>
-      <li>每分配一个样本，聚类的聚类中心会根据聚类中现有的对象被重新计算。这个过程将不断重复直到满足某个终止条件。
+      <li>样本划分完成后，计算每簇样本坐标的均值，并以此为新的质心。
       </li>
-      <li>终止条件可以是没有（或最小数目）对象被重新分配给不同的聚类，没有（或最小数目）聚类中心再发生变化，误差平方和局部最小。
+      <li>重新计算各样本与每个质心的距离，若存在样本所属簇发生变化则转2），否则转5）。
       </li>
-    </ul>
-    <div style="clear: both;font-size: 20px;position: absolute;bottom: 30px;"><a href="4.dbscan.html">DBSCAN 聚类</a></div> 
+      <li>
+        当所有样本所属簇不再发生变化时停止并输出聚类结果。
+      </li>
+      <li>
+        以下是以10个点聚类为3类的K-均值聚类算法过程，其中实心符号表示聚类中心点:
+      </li>
+    </ol>
+    <div style="margin-left: 57px;"><img src="../images/无标题.png"  width="90%"></div>
+    <div style="clear: both;font-size: 20px;margin-bottom: 30px;"><a href="4.dbscan.html">DBSCAN 聚类</a></div> 
 
   </div>
 
-  <div style="float: left;height: 90%;width: 50%;padding-top: 70px;padding-left: 3px;">
+  <div style="float: left;height: 90%;width: 50%;padding-top: 70px;padding-left: 3px;position:fixed;left: 47%;">
   <div id="svg_area" >
 
   </div>
