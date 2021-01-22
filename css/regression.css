@@ -108,3 +108,10 @@ table, td {
 img{
     margin-left: 40%;
 }
+
+.click { background-color: #fff; }
+.hover { background-color:  #fff }
+
+.hover_corr { opacity: 0.6 !important; }
+.click_corr { border: 3px solid  #fff !important; }
+
