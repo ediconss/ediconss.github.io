@@ -131,7 +131,9 @@ img{
     position: fixed;
     left: 50%;
 }
-
+#reminder{
+    display: none;
+}
 @media screen and (max-width: 1200px) {
     html{
         width: 200%;
@@ -139,5 +141,9 @@ img{
     .svgdiv{
         position:fixed; 
         left: 45%;
+        height: 800px;
+        
+        /* bottom: 20px; */
     } 
+
 }

@@ -156,7 +156,8 @@ table, td {
     .svgdiv{
         position:fixed; 
         left: 50%;
-        height: 700px;
+        height: 600px;
+        /* top: 20px; */
     } 
-
+ 
 }

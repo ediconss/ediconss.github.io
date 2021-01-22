@@ -110,11 +110,19 @@ body {
 #minPoints_value{
     margin-left: 160px
 }
+.svgdiv{
+    float: left;padding-left: 10px;position:fixed;left: 47%;
+}
+#svg_area{
+    margin-top: 70px;height: 90%;
+}
 @media screen and (max-width: 1200px){
     html{
         width: 150%;
     }
-    
+    .svg_area{
+        margin-top: 10px;
+    }
 
 
 }
