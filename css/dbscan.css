@@ -116,6 +116,9 @@ body {
 #svg_area{
     margin-top: 70px;height: 90%;
 }
+#reminder{
+    display: none;
+}
 @media screen and (max-width: 1200px){
     html{
         width: 150%;
@@ -124,5 +127,7 @@ body {
         margin-top: 10px;
     }
 
-
+    #reminder{
+        display: block;
+    }
 }

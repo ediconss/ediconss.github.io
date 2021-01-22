@@ -149,6 +149,9 @@ table, td {
     width: 500px;
     padding-top: 20px;
 }
+#reminder{
+    display: none;
+}
 @media screen and (max-width: 1200px){
     html{
         width: 150%;
@@ -159,5 +162,7 @@ table, td {
         height: 600px;
         /* top: 20px; */
     } 
- 
+    #reminder{
+        display: block;
+    }
 }

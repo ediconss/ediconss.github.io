@@ -142,8 +142,16 @@ img{
         position:fixed; 
         left: 45%;
         height: 800px;
-        
-        /* bottom: 20px; */
     } 
+    #reminder{
+        display: block;
+    }
 
+} 
+
+/* .dis {
+  
 }
+.message {
+  
+}  */

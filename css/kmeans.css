@@ -93,18 +93,10 @@ text.choice_title {
 li{
     margin-bottom: 5px;
 }
-
-@media screen and (max-width: 1440px){
-    html{
-        width: 150%;
-    }
-    .svgdiv{
-        position:unset; 
-        left: 75%;
-    } 
-
-
+#reminder{
+    display: none;
 }
+
 
 @media screen and (max-width: 1200px){
     html{
@@ -119,5 +111,7 @@ li{
     .button{
         width: 50px;
     }
-
+    #reminder{
+        display: block;
+    }
 }
