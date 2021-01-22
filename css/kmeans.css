@@ -68,17 +68,9 @@ text.choice_title {
     user-select: none;
 }
 .button_area{
+    margin-left: 15%;
     margin-top: 25px;
-    /* height: 100px; */
-    /* position: absolute; */
-    /* width: 800px; */
-    margin-left: 100px;
-    /* left: 1500px; */
-    /* -webkit-transform: translate(-50%, -50%);
-            -moz-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            -o-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); */
+    
 }
 
  #next_centroid{
@@ -96,7 +88,9 @@ li{
 #reminder{
     display: none;
 }
-
+.firstbutton{
+    float: left;margin-right: 80px;margin-bottom: 20px;
+}
 
 @media screen and (max-width: 1200px){
     html{
@@ -113,5 +107,21 @@ li{
     }
     #reminder{
         display: block;
+    }
+    .button_area{
+        margin-left: 3%;
+    }
+    #svg_area{
+        width:  80%
+    }
+    .firstbutton{
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+    .option{
+        width: 100px;
+    }
+    #next_centroid{
+        margin-right: 140px;
     }
 }

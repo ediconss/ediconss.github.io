@@ -130,4 +130,7 @@ body {
     #reminder{
         display: block;
     }
+    #svg_area{
+        width:  80%
+    }
 }

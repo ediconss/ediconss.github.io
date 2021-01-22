@@ -159,7 +159,7 @@ table, td {
     .svgdiv{
         position:fixed; 
         left: 50%;
-        height: 600px;
+        height: 540px;
         /* top: 20px; */
     } 
     #reminder{
