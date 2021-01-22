@@ -1,7 +1,15 @@
+body{
+    font-size: 20px;margin: 0;height: 100%;
+}
+.text{
+    padding-top: 4%;font-size: 20px;float: left;;padding-left: 55px;padding-right: 55px;width: 40%;background: #FFF1F9;
+}
 input {
     font-size: 15px;
 }
-
+.svgdiv{
+    float: left;height: 90%;width: 50%;padding-top: 70px;padding-left: 3px;position:fixed;left: 47%;
+}
 text.choice_text {
     font-size: 20px;
 }
@@ -84,4 +92,28 @@ text.choice_title {
 } 
 li{
     margin-bottom: 5px;
+}
+
+@media screen and (max-width: 1440px){
+    html{
+        width: 150%;
+    }
+    .svgdiv{
+        position:unset; 
+        left: 75%;
+    } 
+
+
+}
+
+@media screen and (max-width: 1200px){
+    html{
+        width: 200%;
+    }
+    .svgdiv{
+        position:fixed; 
+        left: 55%;
+    } 
+
+
 }

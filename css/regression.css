@@ -1,6 +1,10 @@
 
 body{
     font-size: 20px;
+    width: 100%;margin: 0;
+}
+.text{
+    float: left;width: 40%;padding-right: 55px;background: #FFF1F9;padding-left: 55px;padding-top: 50px;
 }
 .cbox {
     float: left;
@@ -9,7 +13,10 @@ body{
 #table_corr {
     font-size: 12px;
     cursor: pointer;
-    margin-left: 3%;
+    float: left;
+    text-align: center;
+    margin-left: 40px;
+    font-size: 15px;
 }
 .data {
     fill: #3987BD;
@@ -98,11 +105,9 @@ table, td {
 }
 
 .interactive-wrapper {
+    margin-left: 40px;
     display: block;
-    width: auto;
-    margin: 0 auto;
     text-align: center;
-    margin-left: 14px;
     width: 570px;
 }  
 img{
@@ -115,3 +120,24 @@ img{
 .hover_corr { opacity: 0.6 !important; }
 .click_corr { border: 3px solid  #fff !important; }
 
+.svgdiv{
+    margin: 0 auto;
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+    height: 80%;
+    margin-top: 50px;
+    margin-left: 0px;
+    position: fixed;
+    left: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+    html{
+        width: 200%;
+    }
+    .svgdiv{
+        position:fixed; 
+        left: 45%;
+    } 
+}

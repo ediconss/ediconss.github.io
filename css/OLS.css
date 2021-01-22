@@ -1,13 +1,17 @@
 body {
-  
+    margin: 0;
     font-size: 20px;
 }
-
+.text{
+    float: left;width: 40%;background: #FFF1F9;padding-top: 50px;padding-left: 55px;padding-right: 55px;
+}
 .cbox {
     float: left;
 }
 
-
+.svgdiv{
+    float: left;margin-top: 1%;position: fixed;left: 51%;width: 46%;height: 80%;
+}
 
 #table_corr {
     font-size: 12px;
@@ -144,4 +148,14 @@ table, td {
     text-align: center;
     width: 500px;
     padding-top: 20px;
+}
+@media screen and (max-width: 1200px){
+    html{
+        width: 150%;
+    }
+    .svgdiv{
+        position:fixed; 
+        left: 50%;
+    } 
+
 }
