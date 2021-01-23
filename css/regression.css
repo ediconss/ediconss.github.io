@@ -165,7 +165,7 @@ html{
     .svgdiv{
         position:fixed;
         left: 52%; 
-        height: 450px;
+        height: 400px;
         margin-top: 0;
     } 
     #reminder{
