@@ -155,9 +155,9 @@ html{
     display: none;
 }
 @media screen and (max-width: 1200px) {
-     .text{
+     /* .text{
          font-size: 15px;
-     }
+     } */
     .svgdiv{
         
         left: 52%;   
