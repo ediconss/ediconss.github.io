@@ -166,6 +166,7 @@ html{
     } 
     #reminder{
         display: block;
+        left: 30%;   
     }
     .interactive-wrapper{
        margin-left: 0;
