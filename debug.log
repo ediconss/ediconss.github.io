@@ -6,3 +6,4 @@
 [0122/190400.454:ERROR:settings.cc(320)] Settings magic is not 1129342067
 [0122/191400.471:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)
 [0122/220140.040:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)
+[0123/131059.537:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)

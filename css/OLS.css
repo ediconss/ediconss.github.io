@@ -176,10 +176,13 @@ table, td {
     .svgdiv{
         position:fixed; 
         left: 50%;
-        height: 540px;
+        height: 500px;
         /* top: 20px; */
     } 
     #reminder{
         display: block;
+    }
+    .mathi{
+        left:62%;
     }
 }

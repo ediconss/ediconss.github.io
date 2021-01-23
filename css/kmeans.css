@@ -105,7 +105,14 @@ li{
 
 @media screen and (max-width: 1200px){
     html{
-        width: 200%;
+        width: 150%;
+        font-size: 10px;
+    }
+    .text{
+        padding-left: 45px;
+    }
+    h1{
+        font-size: 30px;
     }
     .svgdiv{
         position:fixed; 
