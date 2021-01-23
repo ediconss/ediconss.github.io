@@ -1,10 +1,13 @@
 
 body{
     font-size: 20px;
-    width: 100%;margin: 0;
+    width: 100%;
+    margin: 0;
+    height: 100%;
 }
 .text{
-    float: left;width: 40%;padding-right: 55px;background: #FFF1F9;padding-left: 55px;padding-top: 50px;
+    float: left;width: 40%;
+    padding-right: 55px;background: #FFF1F9;padding-left: 55px;padding-top: 50px;
 }
 .cbox {
     float: left;
@@ -45,7 +48,9 @@ table, td {
     padding: 5%;
     width: 80%;
 }
-
+#svgCorr{
+    height: 100%;
+}
 .form-check {
     position: relative;
     padding-left: 2em;
@@ -121,26 +126,42 @@ img{
 .click_corr { border: 3px solid  #fff !important; }
 
 .svgdiv{
-    margin: 0 auto;
+    position: fixed;
+    /* margin: 0 auto; */
     float: left;
     width: 50%;
     padding-right: 10px;
     height: 80%;
     margin-top: 50px;
     margin-left: 0px;
-    position: fixed;
     left: 50%;
 }
 #reminder{
     display: none;
 }
+html{
+    width: 100%;
+    height: 100%;
+}
+.show{
+    position:relative !important;
+    opacity: 1;
+    display: block;
+    left: 25% !important;
+    top: 120px !important;
+}
+.notshow{
+     opacity: 0;
+    display: none;
+}
 @media screen and (max-width: 1200px) {
     html{
-        width: 200%;
+        width: 150%;
+        height: 50%;
     }
     .svgdiv{
         position:fixed; 
-        left: 47%;
+        left: 50%;
         height: 800px;
     } 
     #reminder{
@@ -148,10 +169,3 @@ img{
     }
 
 } 
-
-/* .dis {
-  
-}
-.message {
-  
-}  */

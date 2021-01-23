@@ -1,4 +1,20 @@
 
+var tipMark;
+var svg_ols;
+var img;
+function showMark(text){
+  tipMark.attr('class','show')
+  if(text=='最小二乘回归线'){
+    d3.select("#svg_ols").select('img').remove()
+   img= d3.select("#svg_ols").append('img').attr('src','data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMy40NDZleCIgaGVpZ2h0PSIyLjc0ZXgiIHZpZXdCb3g9IjAgLTEwMDYgNTk0My4xIDEyMTEiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBhcmlhLWhpZGRlbj0idHJ1ZSIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0uNDY0ZXgiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNMjEgMjg3cTAgMTQgMTUgNDh0NDggNzEgNzQgMzZxNDEgMCA2Ni0yM3QyNi02NHEtMi0xOS0zLTIxIDAtMy0xNi00NnQtMzMtOTctMTYtODZxMC00MyAxNC02MHQ0Mi0xOHEyMyAwIDQzIDExdDMxIDIzIDI3IDMzcTAgMSA1IDIwdDE0IDU5IDE5IDc0cTM4IDE1MCA0MiAxNTcgMTMgMjcgNDMgMjcgMTMgMCAyMS03dDExLTEyIDItOXEwLTEzLTQ5LTIxMFQzOTEtMjNxLTI4LTgzLTk3LTEzMnQtMTM4LTUwcS00NSAwLTc5IDIydC0zNCA2NnEwIDIyIDcgMzd0MTkgMjIgMjAgMTAgMTcgM3E0NCAwIDQ0LTQyIDAtMjAtMTItMzV0LTIzLTIwLTEzLTVsLTMtMXEyLTUgMTktMTJ0MzQtN2g4cTE3IDAgMjYgMiAzMyA5IDYxIDM4dDQzIDYyIDIzIDU2IDggMzBsLTYtNHEtNi00LTE5LTExVDI3MC02cS0yMC01LTM5LTUtNDYgMC04MSAyMnQtNDYgNzFxLTEgNy0xIDMxIDAgNTcgMzUgMTQ5dDM1IDExN3YxNHEwIDMtNCA3dC0xMSA0aC00cS0yMyAwLTQyLTE5dC0zMC00MS0xNy00Mi04LTIycS0yLTItMTYtMkgyN3EtNiA2LTYgOXoiLz48cGF0aCBpZD0iYiIgZD0iTTU2IDM0N3EwIDEzIDE0IDIwaDYzN3ExNS04IDE1LTIwIDAtMTEtMTQtMTlsLTMxOC0xSDcycS0xNiA1LTE2IDIwem0wLTE5NHEwIDE1IDE2IDIwaDYzNnExNC0xMCAxNC0yMCAwLTEzLTE1LTIwSDcwcS0xNCA3LTE0IDIweiIvPjxwYXRoIGlkPSJjIiBkPSJNMjMxIDYzN3EtMjcgMC0zMiAxdC01IDExcTAgMjcgMTEgMzMgMSAxIDEzMCAxIDI1OSAwIDI3My0yIDYzLTEwIDEwNS00NXQ0My05MnEwLTY0LTU4LTExNXQtMTMzLTY5bC0xMC0zcTY0LTkgMTA1LTQ2dDQyLTkycTAtNzMtNzItMTQxVDQ1MyAxcS03LTEtMjExLTFRNDIgMCAzOSAycS00IDMtNCA4IDAgNyAyIDE0IDUgMTkgMTAgMjEgNCAxIDE1IDFoNnEyNyAwIDYwIDMgMTQgMyAxOSAxMiAzIDQgNzIgMjc4dDY5IDI4OXEwIDctNTcgOXptNDE4LTkzcTAgMzAtMTUgNTZ0LTQ5IDM0cS03IDItOTIgM2gtNDJxLTIyIDAtMzUtMWgtMTNxLTE1LTEtMTktMTAtMi00LTMyLTEyMCAwLTMtMS02bC0zMS0xMjZoODFxODEgMCA5MyAyIDYwIDEwIDEwNyA1OHQ0OCAxMTB6bS01NC0zMTVxMCA0NC0yMyA3M3QtNjAgMzRxLTYgMS04MyAxLTExOCAwLTExOS0xIDAtMi0xNy03M3QtMzUtMTQxbC0xOC03MHEwLTQgMTItNHQ4MS0ycTg5IDAgOTYgMSA2MiA3IDExNCA1OHQ1MiAxMjR6Ii8+PHBhdGggaWQ9ImQiIGQ9Ik05NiA1ODVxNTYgODEgMTUzIDgxIDQ4IDAgOTYtMjZ0NzgtOTJxMzctODMgMzctMjI4IDAtMTU1LTQzLTIzNy0yMC00Mi01NS02N3QtNjEtMzEtNTEtN3EtMjYgMC01MiA2dC02MSAzMi01NSA2N3EtNDMgODItNDMgMjM3IDAgMTc0IDU3IDI2NXptMjI1IDEycS0zMCAzMi03MSAzMi00MiAwLTcyLTMyLTI1LTI2LTMzLTcydC04LTE5MnEwLTE1OCA4LTIwOHQzNi03OXEyOC0zMCA2OS0zMCA0MCAwIDY4IDMwIDI5IDMwIDM2IDg0dDggMjAzcTAgMTQ1LTggMTkxdC0zMyA3M3oiLz48cGF0aCBpZD0iZSIgZD0iTTExMiA1NjBsMTM3IDEzNCA4LThxMTMwLTEyNCAxMzAtMTI2bC0yNi0yOXEtMiAxLTU4IDUwbC01MyA0Ni01NS00N3EtMTMtMTEtMjYtMjN0LTIxLTE5bC04LTZxLTItMi0xNSAxNGwtMTMgMTR6Ii8+PHBhdGggaWQ9ImYiIGQ9Ik01NiAyMzd2MTNsMTQgMjBoMjk5djE1MGwxIDE1MHExMCAxMyAxOSAxMyAxMyAwIDIwLTE1VjI3MGgyOThxMTUtOCAxNS0yMHQtMTUtMjBINDA5Vi02OHEtOC0xNC0xOC0xNGgtNHEtMTIgMC0xOCAxNHYyOThINzBxLTE0IDctMTQgMjB6Ii8+PHBhdGggaWQ9ImciIGQ9Ik0yMTMgNTc4bC0xMy01cS0xNC01LTQwLTEwdC01OC03SDgzdjQ2aDE5cTQ3IDIgODcgMTV0NTYgMjQgMjggMjJxMiAzIDEyIDMgOSAwIDE3LTZWMzYxbDEtMzAwcTctNyAxMi05dDI0LTQgNjItMmgyNlYwaC0xMXEtMjEgMy0xNTkgMy0xMzYgMC0xNTctM0g4OHY0Nmg2NHExNiAwIDI1IDF0MTYgMyA4IDIgNiA1IDYgNHY1MTd6Ii8+PHBhdGggaWQ9ImgiIGQ9Ik01MiAyODlxNyA0MiA1NCA5N3QxMTYgNTZxMzUgMCA2NC0xOHQ0My00NXE0MiA2MyAxMDEgNjMgMzcgMCA2NC0yMnQyOC01OXEwLTI5LTE0LTQ3dC0yNy0yMi0yMy00cS0xOSAwLTMxIDExdC0xMiAyOXEwIDQ2IDUwIDYzLTExIDEzLTQwIDEzLTEzIDAtMTktMi0zOC0xNi01Ni02Ni02MC0yMjEtNjAtMjU4IDAtMjggMTYtNDB0MzUtMTJxMzcgMCA3MyAzM3Q0OSA4MXEzIDEwIDYgMTF0MTYgMmg0cTE1IDAgMTUtOCAwLTEtMi0xMS0xNi01Ny02Mi0xMDFUMzMzLTExcS03MCAwLTEwNiA2My00MS02Mi05NC02MmgtNnEtNDkgMC03MCAyNlQzNSA3MXEwIDMyIDE5IDUydDQ1IDIwcTQzIDAgNDMtNDIgMC0yMC0xMi0zNXQtMjMtMjAtMTMtNWwtMy0xcTAtMSA2LTR0MTYtNyAxOS0zcTM2IDAgNjIgNDUgOSAxNiAyMyA2OHQyOCAxMDggMTYgNjZxNSAyNyA1IDM5IDAgMjgtMTUgNDB0LTM0IDEycS00MCAwLTc1LTMydC00OS04MnEtMi05LTUtMTB0LTE2LTJINThxLTYgNi02IDExeiIvPjwvZGVmcz48ZyBkYXRhLW1tbC1ub2RlPSJtYXRoIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgZmlsbD0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjAiPjx1c2UgeGxpbms6aHJlZj0iI2EiIGRhdGEtbW1sLW5vZGU9Im1pIiB0cmFuc2Zvcm09InNjYWxlKDEgLTEpIi8+PHVzZSB4bGluazpocmVmPSIjYiIgZGF0YS1tbWwtbm9kZT0ibW8iIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDc2Ny44IDApIi8+PGcgZGF0YS1tbWwtbm9kZT0iVGVYQXRvbSI+PGcgZGF0YS1tbWwtbm9kZT0ibW92ZXIiIGRhdGEtbWp4LXRleGNsYXNzPSJPUkQiPjxnIGRhdGEtbW1sLW5vZGU9Im1zdWIiPjx1c2UgeGxpbms6aHJlZj0iI2MiIGRhdGEtbW1sLW5vZGU9Im1pIiB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAtMSAxODIzLjYgMCkiLz48ZyBkYXRhLW1tbC1ub2RlPSJUZVhBdG9tIj48dXNlIHhsaW5rOmhyZWY9IiNkIiBkYXRhLW1tbC1ub2RlPSJtbiIgdHJhbnNmb3JtPSJtYXRyaXgoLjcwNyAwIDAgLS43MDcgMjU4Mi42IDE1MCkiIGRhdGEtbWp4LXRleGNsYXNzPSJPUkQiLz48L2c+PC9nPjx1c2UgeGxpbms6aHJlZj0iI2UiIGRhdGEtbW1sLW5vZGU9Im1vIiB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAtMSAyMjM4LjIgLTIxMikiLz48L2c+PC9nPjx1c2UgeGxpbms6aHJlZj0iI2YiIGRhdGEtbW1sLW5vZGU9Im1vIiB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAtMSAzMjA4LjMgMCkiLz48ZyBkYXRhLW1tbC1ub2RlPSJUZVhBdG9tIj48ZyBkYXRhLW1tbC1ub2RlPSJtb3ZlciIgZGF0YS1tangtdGV4Y2xhc3M9Ik9SRCI+PGcgZGF0YS1tbWwtbm9kZT0ibXN1YiI+PHVzZSB4bGluazpocmVmPSIjYyIgZGF0YS1tbWwtbm9kZT0ibWkiIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDQyMDguNiAwKSIvPjxnIGRhdGEtbW1sLW5vZGU9IlRlWEF0b20iPjx1c2UgeGxpbms6aHJlZj0iI2ciIGRhdGEtbW1sLW5vZGU9Im1uIiB0cmFuc2Zvcm09Im1hdHJpeCguNzA3IDAgMCAtLjcwNyA0OTY3LjYgMTUwKSIgZGF0YS1tangtdGV4Y2xhc3M9Ik9SRCIvPjwvZz48L2c+PHVzZSB4bGluazpocmVmPSIjZSIgZGF0YS1tbWwtbm9kZT0ibW8iIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDQ2MjMuMiAtMjEyKSIvPjwvZz48L2c+PHVzZSB4bGluazpocmVmPSIjaCIgZGF0YS1tbWwtbm9kZT0ibWkiIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDUzNzEuMSAwKSIvPjwvZz48L3N2Zz4=')
+   img.attr('class','mathi')
+    }
+  tipMark.html(text)
+}
+function notshowMark(){
+  tipMark.attr('class','notshow')
+  img.remove()
+}
   window.onload = function () {
     var parent = d3.select('#svg_ols')
     
@@ -31,7 +47,7 @@
       dur = 100;
 
 
-    var svg_ols = d3.select("#svg_ols").append("svg").attr("display", "inline-block")
+     svg_ols = d3.select("#svg_ols").append("svg").attr("display", "inline-block")
     .attr("width", "00px").attr("heigh", "500px");
 
 
@@ -42,6 +58,8 @@
     var x_axis_ols = d3.svg.axis().scale(x_scale_ols).orient("bottom").ticks(5),
       y_axis_ols = d3.svg.axis().scale(y_scale_ols).orient("left").ticks(5);
 
+       tipMark = svg_ols.append("text").attr("text-anchor", "middle")
+      
 
     var x_axis_group_ols = svg_ols.append("g").attr("class", "x axis"),
       y_axis_group_ols = svg_ols.append("g").attr("class", "y axis");
@@ -98,22 +116,30 @@
         .on('mouseover', function (d) { tipOLS.show(d, this) })
         .on('mouseout', tipOLS.hide);
 
-  
+ 
       containerOLS.selectAll("line.ols")
         .data([1])
         .enter()
         .append("line")
         .attr("class", "ols")
+        .attr('onmousedown', "showMark('最小二乘回归线')" )
+        .attr('onmouseover', "showMark('最小二乘回归线')")
+        .attr('onmouseout',"notshowMark()")
         .moveToBack();
 
 
+      var rects = containerOLS.selectAll("rect.sse").data(data_ols)
+           
 
-      var rects = containerOLS.selectAll("rect.sse").data(data_ols);
 
+      
       rects.enter()
         .append("rect")
         .attr("r", 5)
         .attr("class", "sse")
+        .attr('onmousedown', "showMark('正方形的面积表示数据与回归线的误差平方')" )
+        .attr('onmouseover', "showMark('正方形的面积表示数据与回归线的误差平方')")
+        .attr('onmouseout', "notshowMark()")
         .moveToBack();
     }
 
@@ -366,6 +392,8 @@
       clip_ols.attr("x", padding).attr("y", padding).attr("width", w - 2 * padding).attr("height", h - 2 * padding);
 
       xaxisTextOLS.attr("transform", "translate(" + (w / 2) + "," + (h+10 - padding / 4) + ")");
+      tipMark.attr("transform", "translate(" + (w / 2) + "," + (60) + ")");
+       
       yaxisTextOLS.attr("transform", "translate(" + (padding / 4+8) + "," + (h / 2) + ")rotate(-90)");
 
       statisticsCalcOLS(0);

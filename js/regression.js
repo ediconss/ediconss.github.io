@@ -5,6 +5,7 @@
     var x_key = 0;
     var y_key = 0;
     var sf_corr = 0.25;
+    var names;
     var xScaleCorr = d3.scale.linear();
     var yScaleCorr = d3.scale.linear();
     var pScaleCorr = d3.scale.linear().domain([-1, 0, 1]).range(['#4860D1', '#DCDCDC', '#CF463D']);
@@ -26,8 +27,11 @@
     var yaxisTextCorr = svgCorr.append("text").attr("text-anchor", "middle");
 
     var tipCorr = d3.tip().attr('class', 'd3-tip').offset([-10, 0]);
+    var tipMark = svgCorr.append("text").attr("text-anchor", "middle")
+  
+    // svgCorr.append(tipMark)
     $(window).on('mouseup', tipCorr.hide);
-
+    $(window).on('mouseup', tipMark.attr('class','notshow'));
 
     var containerCorr = svgCorr.append("g").attr("clip-path", "url(#viewCorr)").call(tipCorr);
 
@@ -67,13 +71,32 @@
         .style("fill", "url(#linear-gradient)")
         .attr("stroke-width", lineWidth)
         .attr('stroke', 'black')
+        function showMark(text){
+            tipMark.attr('class','show')
+            tipMark.html(text)
+        }
+     
+        var regressionLineCorrX = containerCorr.append("line")
+        .on('mousedown', function (d) {showMark('数据集中'+names[x_key]+'的最小二乘回归线')  })
+        .on('mouseover', function (d) { showMark('数据集中'+names[x_key]+'的最小二乘回归线') })
+        .on('mouseout',function (d) { tipMark.attr('class','notshow')});
 
-    var regressionLineCorrX = containerCorr.append("line"),
-        regressionLineCorrY = containerCorr.append("line"),
-        cosineCorr = containerCorr.append("path"),
+        regressionLineCorrY = containerCorr.append("line")
+        .on('mousedown', function (d) {showMark('数据集中'+names[y_key]+'的最小二乘回归线') })
+        .on('mouseover', function (d) { showMark('数据集中'+names[y_key]+'的最小二乘回归线') })
+        .on('mouseout', function (d) { tipMark.attr('class','notshow')});
+
+        cosineCorr = containerCorr.append("path")
+        .on('mousedown', function (d) { showMark('两条回归线的夹角，夹角越大越不相关'); })
+        .on('mouseover', function (d) { showMark('两条回归线的夹角，夹角越大越不相关');})
+        .on('mouseout', function (d) { tipMark.attr('class','notshow')});
+
         barCorr = svgCorr.append('line');
 
 
+        
+            
+    
     $("#table_corr").delegate('td', 'click mouseover mouseleave', function (e) {
 
         var col = $(this).index(),
@@ -114,11 +137,10 @@
 
     function add_data_corr() {
         // console.log(x_key)
-        var names=new Array('萼片长度','萼片宽度', '花瓣长度',  '花瓣宽度','萼片长度','萼片宽度', '花瓣长度', '花瓣宽度')
+         names=new Array('萼片长度','萼片宽度', '花瓣长度',  '花瓣宽度','萼片长度','萼片宽度', '花瓣长度', '花瓣宽度')
         xaxisTextCorr.text(names[x_key]);
         yaxisTextCorr.text(names[y_key]);
 
- 
         tipCorr.html(function (d, i) {
             return '(' + round(d[keys_corr[x_key]], 2) + ', ' + round(d[keys_corr[y_key]], 2) + ')';
         });
@@ -331,7 +353,7 @@
         xAxisGroupCorr.attr("transform", "translate(0," + (h - padding) + ")").call(xAxisCorr);
         xAxisGroupBarCorr.attr("transform", "translate(0," + (hBar - padding+40) + ")").call(xAxisBarCorr);
         yAxisGroupCorr.attr("transform", "translate(" + padding + ",0)").call(yAxisCorr);
-
+       
 
         legend.attr("x", padding).attr("y", lineWidth+20).attr("width", w - 2 * padding).attr("height", hBar - padding - lineWidth+25);
         barCorr.attr("y1", lineWidth+19).attr("y2", hBar - padding+46);
@@ -339,7 +361,8 @@
   
         clipCorr.attr("x", padding).attr("y", padding).attr("width", w - 2 * padding).attr("height", h - 2 * padding);
 
-    
+        tipMark.attr("transform", "translate(" + (w / 2) + "," + 85 + ")");
+
         xaxisTextCorr.attr("transform", "translate(" + (w / 2) + "," + (h - padding / 4) + ")");
         yaxisTextCorr.attr("transform", "translate(" + (padding / 4) + "," + (h / 2) + ")rotate(-90)");
 

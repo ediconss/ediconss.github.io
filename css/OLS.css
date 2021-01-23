@@ -152,6 +152,23 @@ table, td {
 #reminder{
     display: none;
 }
+
+.show{
+    /* position:relative !important; */
+    opacity: 1;
+    display: block;
+    /* left: 25% !important;
+    top: 20% !important; */
+}
+.notshow{
+     opacity: 0;
+    display: none;
+}
+.mathi{
+    position:absolute;
+    left:60%;
+    top:37px
+}
 @media screen and (max-width: 1200px){
     html{
         width: 150%;
