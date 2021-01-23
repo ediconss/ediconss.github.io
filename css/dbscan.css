@@ -118,6 +118,7 @@ body {
 }
 #reminder{
     display: none;
+    left: 35%;
 }
 .show{
     position:relative !important;
@@ -130,16 +131,44 @@ body {
      opacity: 0;
     display: none;
 }
+.text{
+    padding-top: 4%;padding-left: 55px;padding-right: 55px;padding-left: 55px;padding-right: 55px;font-size: 20px;float: left;width: 40%;background: #FFF1F9;
+}
+.text img{
+    margin-left: 140px;
+}
+ol img{
+    margin-left: 100px;
+}
+.lable{
+    margin-left: 240px;margin-top: -40px;
+}
+ol .lable{
+    margin-left: 230px;margin-top: -20px;
+}
 @media screen and (max-width: 1200px){
-    html{
-        width: 150%;
-    }
+  
     .svg_area{
         margin-top: 10px;
     }
-
+    .text img{
+        margin-left: 30px;
+    }
+    ol img{
+        margin-left: 20px;
+    }
+    .option{
+        width: 100px;
+    }
+    .lable{
+        margin-left: 120px;margin-top: -40px;
+    }
+    ol .lable{
+        margin-left: 100px;margin-top: -20px;
+    }
     #reminder{
         display: block;
+        left: 30%;
     }
     #svg_area{
         width:  80%

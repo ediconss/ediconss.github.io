@@ -151,6 +151,7 @@ table, td {
 }
 #reminder{
     display: none;
+    left: 53%;
 }
 
 .show{
@@ -170,19 +171,21 @@ table, td {
     top:37px
 }
 @media screen and (max-width: 1200px){
-    html{
-        width: 150%;
-    }
+ 
     .svgdiv{
         position:fixed; 
-        left: 50%;
+     
         height: 500px;
-        /* top: 20px; */
+    
     } 
     #reminder{
         display: block;
+        left: 30%;
     }
     .mathi{
         left:62%;
+    }
+    .interactive-wrapper{
+        width: 400px;
     }
 }

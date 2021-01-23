@@ -155,26 +155,18 @@ html{
     display: none;
 }
 @media screen and (max-width: 1200px) {
-    html{
-        width: 100%;
-        height: 50%;
-    }
-    /* .text{
-        width: 40%;
-    } */
+     .text{
+         width: 40%;font-size: 20px;
+     }
     .svgdiv{
-        position:fixed;
-        left: 52%; 
-        height: 400px;
+        
+        left: 52%;   
+        height: 500px;
         margin-top: 0;
     } 
     #reminder{
         display: block;
     }
-    /* label{
-        float: left;
-    }*/
-
     .interactive-wrapper{
        margin-left: 0;
        width: 510px;

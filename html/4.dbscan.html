@@ -15,15 +15,15 @@
   <script src="../js/dbscan.js"></script>
   <script src="../js/dbmain.js"></script>
   <body >
-    <div id="reminder" style="position: absolute;left: 55%;top: 20px;"><b>推荐请使用横屏观看</b></div>
-  <div style="padding-top: 4%;padding-left: 55px;padding-right: 55px;padding-left: 55px;padding-right: 55px;font-size: 20px;float: left;width: 40%;background: #FFF1F9;">
+    <div id="reminder" style="position: absolute;top: 20px;font-size: 20px;"><b>推荐请使用横屏观看</b></div>
+  <div class="text">
 
     <h1>DBSCAN聚类算法</h1>
     <p style="font-size: 20px;"> DBSCAN聚类算法（Density-Based Spatial Clustering of Applications with Noise）是最常用的密度聚类代表算法之一。DBSCAN算法通过样本分布的紧密程度来确定聚类结构，从样本密度的角度来考察样本之间的可连接性，并基于可连接样本不断扩展聚类簇来获得最终的聚类结果。   
     </p>
     <p>以下是对下图中点的DBSCAN聚类算法过程:</p>
-    <img src="../images/无标题2.png" style="margin-left: 140px;">
-    <div style="margin-left: 240px;margin-top: -40px;">原始点分布 </div>
+    <img src="../images/无标题2.png" >
+    <div class="lable">原始点分布 </div>
     <p>DBSCAN算法首先需要设置两个参数，这两个参数刻画了样本分布的紧密程度：</p>
     <ul  style="margin-left: -17px;">
       <li>半径R：即下图中的各虚线圆形的半径大小。</li>
@@ -32,8 +32,8 @@
     <ol style="background-color: #FFF1F9;margin-left: -17px;">
       <li>
         确定核心对象。
-        <div><img src='../images/无标题3.png' style="margin-left: 100px;"></div>
-        <div style="margin-left: 170px;margin-top: -10px;">DBSCAN聚类核心对象</div>
+        <div><img src='../images/无标题3.png'></div>
+        <div class="lable">DBSCAN聚类核心对象</div>
         <p>
           核心对象就是在以某个样本为圆心，作半径为R的圆，圆中的样本个数达到了密度阈值（本例取3）的样本。
 图中x1、x2和y1,在以它们为圆心的虚线圆圈中，都存在3个及以上的样本数，所以x1、x2和y1就是核心对象。
@@ -42,8 +42,8 @@
       </li>
       <li>
         随机选择一个核心对象，找到由它密度可达的所有样本，构成一个簇。
-        <div><img src='../images/无标题6.png' style="margin-left: 100px;"></div>
-        <div style="margin-left: 170px;margin-top: -20px;">DBSCAN聚类构建X簇</div>
+        <div><img src='../images/无标题6.png' ></div>
+        <div class="lable">DBSCAN聚类构建X簇</div>
         <p>
           例如选择核心对象x1。<br>
 x1作半径为R的圆圈里的其余样本（如x2，称x2由x1直接密度可达），添加到x1所在的X簇。
@@ -54,12 +54,12 @@ x2由x1直接密度可达，同时x2也是核心对象，则由x2直接密度可
       </li>
       <li>
         在剩下未成簇的样本中，继续随机选一个核心对象，找到它密度可达的所有样本构成下一个簇（如y1为核心对象构成的Y簇）。如此反复，直到所有核心对象都成簇。
-     <div><img src="../images/无标题4.png" style="margin-left: 100px;"></div>
-      <div style="margin-left: 170px;margin-top: -10px;margin-bottom: 20px;">BSCAN聚类构建Y簇</div>
+     <div><img src="../images/无标题4.png" ></div>
+      <div class="lable">BSCAN聚类构建Y簇</div>
       </li>
       <li>	剩下不属于任何簇的样本被认为是噪声点或者异常点，如z点。DBSCAN聚类完成。</li>
-      <img src="../images/无标题5.png" style="margin-left: 100px;">
-      <div style="margin-left: 170px;margin-top: -20px;">DBSCAN聚类确定噪声点</div>
+      <img src="../images/无标题5.png" >
+      <div class="lable">DBSCAN聚类确定噪声点</div>
     
     </ol>
     <p>以上就是DBSCAN聚类的算法流程，在上图中聚类成了2个簇（X簇和Y簇）和1个噪声点。
@@ -77,6 +77,7 @@ x2由x1直接密度可达，同时x2也是核心对象，则由x2直接密度可
 
 
     <div id="button_area" style="margin-left: 500px;margin-top: -85px;">
+      <div>
     <div class="button" style="margin-right:10px;position: relative;left: -140px;"  onclick="bchangeData()">
       <p>更换数据</p>
     </div>
@@ -91,7 +92,7 @@ x2由x1直接密度可达，同时x2也是核心对象，则由x2直接密度可
       <option value=7>案例A</option>
 
     </select>
-
+  </div>
     <script>restart(2);</script>
 </div>
 </div>
