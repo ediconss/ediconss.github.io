@@ -138,6 +138,7 @@ img{
 }
 #reminder{
     display: none;
+    left: 35%;
 }
 html{
     width: 100%;
@@ -159,14 +160,13 @@ html{
          font-size: 15px;
      } */
     .svgdiv{
-        
         left: 52%;   
         height: 350px;
         margin-top: 0;
     } 
     #reminder{
         display: block;
-        left: 20%;   
+        left: 32%;   
     }
     .interactive-wrapper{
        margin-left: 0;
