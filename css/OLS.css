@@ -174,9 +174,9 @@ table, td {
  
     .svgdiv{
         position:fixed; 
-     
-        height: 500px;
-    
+        /* left: 50%; */
+        height: 400px;
+
     } 
     #reminder{
         display: block;
