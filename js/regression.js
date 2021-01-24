@@ -177,6 +177,7 @@
             .attr("stroke", "#3987BD")
             .call(dragCorr)
             .on('mousedown', function (d) { tipCorr.show(d, this); })
+            .on('click', function (d) { tipCorr.show(d, this); })
             .on('mouseover', function (d) { tipCorr.show(d, this); })
             .on('mouseout', tipCorr.hide);
 
