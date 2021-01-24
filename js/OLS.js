@@ -392,7 +392,7 @@ function notshowMark(){
       clip_ols.attr("x", padding).attr("y", padding).attr("width", w - 2 * padding).attr("height", h - 2 * padding);
 
       xaxisTextOLS.attr("transform", "translate(" + (w / 2) + "," + (h+10 - padding / 4) + ")");
-      tipMark.attr("transform", "translate(" + (w / 2) + "," + (60) + ")");
+      tipMark.attr("transform", "translate(" + (w / 2+15) + "," + (60) + ")");
        
       yaxisTextOLS.attr("transform", "translate(" + (padding / 4+8) + "," + (h / 2) + ")rotate(-90)");
 
