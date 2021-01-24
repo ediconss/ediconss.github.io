@@ -13,9 +13,9 @@ text.choice_title {
     font-size: 40px;
 }
 
-img {
+/* img {
     margin-top: 15px;
-}
+} */
 /* 
 body {
     padding: 1% 5% 5% 5%;
@@ -147,11 +147,11 @@ body {
 .text{
     padding-top: 4%;padding-left: 55px;padding-right: 55px;padding-left: 55px;padding-right: 55px;font-size: 20px;float: left;width: 40%;background: #FFF1F9;
 }
-.text img{
+.img2{
     margin-left: 140px;
 }
-ol img{
-    margin-left: 100px;
+.img1{
+    margin-left: 140px;
 }
 .lable{
     margin-left: 240px;margin-top: -40px;
@@ -167,10 +167,10 @@ ol .lable{
     .svg_area{
         margin-top: 10px;
     }
-    .text img{
+    .img1{
         margin-left: 30px;
     }
-    ol img{
+    .img2{
         margin-left: 20px;
     }
     .option{
