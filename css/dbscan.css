@@ -162,9 +162,9 @@ ol .lable{
 @media screen and (max-width: 1200px){
     .svgdiv{
        padding-top: 0;
+       left: 51%;
     }
     .svg_area{
-       
         margin-top: 10px;
     }
     .text img{
@@ -174,7 +174,7 @@ ol .lable{
         margin-left: 20px;
     }
     .option{
-        
+
         width: 100px;
     }
     .lable{
