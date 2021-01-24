@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html style="height: 100%;width: 100%;">
+
+<head>
+  <title>K-Means 聚类</title>
+  <link href="./css/kmeans.css" rel="stylesheet" type="text/css" />
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/d3.min.js"></script>
+  <script src="./js/choose.js"></script>
+  <script src="./js/generate.js"></script>
+  <script src="./js/config.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/kmeans.js"></script>
+</head>
+
+<body >
+  <div id="reminder" style="position: absolute;top: 20px;font-size: 20px;"><b>推荐请使用横屏观看</b></div>
+   <div  class="text">
+  
+    <h1> K-Means聚类算法</h1>
+    K-均值聚类算法（k-means clustering algorithm）作为基于距离的聚类算法，其算法过程如下：
+    <ol style="margin-left: -17px;">
+      <li>随机选取K个样本对象作为初始的聚类质心（中心点）。</li>
+      <li>计算各样本与每个中心点的距离，并将样本划分到距离最近的质心所在簇。
+      </li>
+      <li>样本划分完成后，计算每簇样本坐标的均值，并以此为新的质心。
+      </li>
+      <li>重新计算各样本与每个质心的距离，若存在样本所属簇发生变化则转第2步，否则转第5步。
+      </li>
+      <li>
+        当所有样本所属簇不再发生变化时停止并输出聚类结果。
+      </li>
+      <li>
+        以下是以10个点聚类为3类的K-均值聚类算法过程，其中实心符号表示聚类中心点:
+      </li>
+    </ol>
+    <div style="margin-left: 57px;"><img src="./images/无标题.png"  width="90%"></div>
+    <div style="clear: both;font-size: 20px;margin-bottom: 40px;"><a href="html/4.dbscan.html">DBSCAN 聚类</a></div> 
+
+  </div>
+
+  <div class="svgdiv">
+  <div id="svg_area" >
+
+  </div>
+
+
+  <div  class="button_area" >
+    <div class="firstbutton">
+    <div class="button"  onclick="bchangeMethed()"  style="font-size: 17px;width: 120px;margin-right: 10px;">
+     更换质心方式</div>
+    <select id='methedset' onchange="changeMethed()" class="option" >
+      <option value="0">自己选择</option>
+      <option selected value="1">随机</option>
+      <option value="2">离中心最远</option>
+    </select>
+  </div>
+  <div style="float: left;margin-bottom: 20px;">
+    <div class="button" onclick="bchangeData()" style="margin-right: 10px;width: 100px">更换数据</div>
+    <select id='dataset' onchange="changeData()" class="option" >
+      <option value=0>均匀分布</option>
+      <option value=1>高斯混合</option>
+      <option selected value=2>笑脸</option>
+      <option value=3>发散型</option>
+      <option value=4>填充圆点</option>
+      <option value=5>笑脸</option>
+      <option value=6>密度聚类</option>
+      <option value=7>案例A</option>
+    </select>
+  </div>
+  <div id="button_area" style="margin-right: 80px;">
+  </div>
+</div>
+</div>
+
+  <script>restart(1, 2);
+  </script>
+</body>
+
+</html>
