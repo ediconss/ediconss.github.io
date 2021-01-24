@@ -67,37 +67,39 @@ x2由x1直接密度可达，同时x2也是核心对象，则由x2直接密度可
     </p>
     <div style="clear: both;font-size: 20px;margin-bottom: 40px;"><a href="3.kmeans.html">K-Means聚类</a></div> 
   </div>
-
+  
   <div class="svgdiv" >
-    <div id="svg_area" ></div>
+  <div id="svg_area" >
 
-  <div id="button_area2" >
+  </div>
+<div>
+  <div  id="button_area2"></div>
+  <div class="ubutton" >
+  
+    
+    <div  style="float: left;margin-bottom: 10px;">
+      <div class="button"   onclick="bchangeData()" style="margin-right: 10px;">
+       <p>更换数据</p>
+     </div>
+     <select id='dataset' onchange="changeData()" class="option">
+       <option value=0>均匀分布</option>
+       <option value=1>高斯混合</option>
+       <option selected value=2>笑脸</option>
+       <option value=3>发散型</option>
+       <option value=4>填充圆点</option>
+       <option value=5>笑脸</option>
+       <option value=6>密度聚类</option>
+       <option value=7>案例A</option>
  
+     </select> 
+
+   </div>
+   <div id="button_area" style="float: left;">
   </div>
-
-
-    <div id="button_area" style="margin-left: 500px;margin-top: -85px;">
-      <div>
-    <div class="button" style="margin-right:10px;position: relative;left: -140px;"  onclick="bchangeData()">
-      <p>更换数据</p>
-    </div>
-    <select id='dataset' onchange="changeData()" class="option" style="position: relative;left: -140px;">
-      <option value=0>均匀分布</option>
-      <option value=1>高斯混合</option>
-      <option selected value=2>笑脸</option>
-      <option value=3>发散型</option>
-      <option value=4>填充圆点</option>
-      <option value=5>笑脸</option>
-      <option value=6>密度聚类</option>
-      <option value=7>案例A</option>
-
-    </select>
-  </div>
-    <script>restart(2);</script>
 </div>
 </div>
 
-
+<script>restart(2);</script>
   </body>
 
 </html>

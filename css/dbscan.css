@@ -85,22 +85,20 @@ body {
     user-select: none;
 }
 
-#button_area2{
-    font-size:medium;
-}
-#next_button{
+/* #next_button{
     clear: both;
     position: relative;
-    left: -140px;
+    left: 56%;
     margin-top: 10px;
 }
 #pause{
     clear: both;
     position: relative;
-    left: -140px;
+    left: 40%;
     margin-top: 10px;
-}
-#eps_value{
+} */
+
+/* #eps_value{
     margin-top: 30px;
     margin-left: 160px
 }
@@ -109,13 +107,28 @@ body {
 }
 #minPoints_value{
     margin-left: 160px
-}
+} */
 .svgdiv{
-    float: left;padding-left: 10px;position:fixed;left: 47%;
+    float: left;
+    height: 90%;
+    width: 50%;
+    padding-left: 3px;
+    position:fixed;
+    left: 47%;
+    padding-top: 50px;
 }
-#svg_area{
-    margin-top: 70px;height: 90%;
+#button_area2{
+   position: relative;
+   left: 22%;
+   top: 20px;
 }
+/* #button_area{
+ 
+    top: 20px;
+ }*/
+.ubutton{
+   width: 300px;position: relative;left: 54%;top: -60px;
+ } 
 #reminder{
     display: none;
     left: 35%;
@@ -147,8 +160,11 @@ ol .lable{
     margin-left: 230px;margin-top: -20px;
 }
 @media screen and (max-width: 1200px){
-  
+    .svgdiv{
+       padding-top: 0;
+    }
     .svg_area{
+       
         margin-top: 10px;
     }
     .text img{
@@ -158,6 +174,7 @@ ol .lable{
         margin-left: 20px;
     }
     .option{
+        
         width: 100px;
     }
     .lable{
@@ -173,4 +190,18 @@ ol .lable{
     #svg_area{
         width:  80%
     }
+    .ubutton{
+        width: 220px;
+        left: 45%;
+    }
+    
+.button {
+    width: 70px;
+    font-size: 15px;
+}
+#button_area2{
+    
+    left: 18%;
+   
+ }
 }
