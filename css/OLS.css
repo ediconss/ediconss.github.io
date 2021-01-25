@@ -188,9 +188,10 @@ table, td {
     #reminder{
         display: block;
         left: 30%;
+     
     }
     .mathi{
-        left:66%;
+        left:63%;
     }
     .interactive-wrapper{
         width: 400px;
