@@ -181,11 +181,10 @@ table, td {
         transform: translate(45px,455px);
     }
     .svgdiv{
-        margin-top: 0;
         margin-left: 20px;
         position:fixed; 
         height: 400px;
-        
+        margin-top: -30px;
     } 
     #reminder{
         display: block;
