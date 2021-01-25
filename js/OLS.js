@@ -53,7 +53,7 @@ function notshowMark(){
 
 
      svg_ols = d3.select("#svg_ols").append("svg").attr("display", "inline-block")
-    .attr("width", "00px").attr("heigh", "500px");
+    
 
 
     var x_scale_ols = d3.scale.linear().domain([0, 20])
@@ -390,9 +390,10 @@ function notshowMark(){
       
       svg_ols.attr("width", w).attr("height", h);
 
-      x_axis_group_ols.attr("transform", "translate(0," + (h - padding-6) + ")").call(x_axis_ols);
-      y_axis_group_ols.attr("transform", "translate(" + padding + ",0)").call(y_axis_ols);
+      x_axis_group_ols.attr("transform", "translate(0," + (h - padding) + ")").call(x_axis_ols);
+      y_axis_group_ols.attr("transform", "translate(" + padding + ",6)").call(y_axis_ols);
 
+      x_axis_group_ols.select("g.tick").remove()
 
       clip_ols.attr("x", padding).attr("y", padding).attr("width", w - 2 * padding).attr("height", h - 2 * padding);
 
