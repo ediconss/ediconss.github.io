@@ -18,6 +18,7 @@ function showMark(text,i){
 function notshowMark(){
   tipMark.attr('class','notshow')
   img.remove()
+  $("#player")[0].pause();
 }
   window.onload = function () {
     var parent = d3.select('#svg_ols')

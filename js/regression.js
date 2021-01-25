@@ -30,7 +30,7 @@
     var tipMark = svgCorr.append("text").attr("text-anchor", "middle")
   
     $(window).on('mouseup', tipCorr.hide);
-    $(window).on('mouseup', tipMark.attr('class','notshow'));
+    $(window).on('mouseup', notshow());
 
     var containerCorr = svgCorr.append("g").attr("clip-path", "url(#viewCorr)").call(tipCorr);
 
@@ -79,21 +79,24 @@
             // $("#asource").src("")
            
         }
-     
+        function notshow(){
+            tipMark.attr('class','notshow')
+            $("#player")[0].pause();
+        }
         var regressionLineCorrX = containerCorr.append("line")
         .on('mousedown', function (d) {showMark('数据集中'+names[x_key]+'的最小二乘回归线',x_key)  })
         .on('mouseover', function (d) { showMark('数据集中'+names[x_key]+'的最小二乘回归线',x_key) })
-        .on('mouseout',function (d) { tipMark.attr('class','notshow')});
+        .on('mouseout',function (d) { notshow()});
 
         regressionLineCorrY = containerCorr.append("line")
         .on('mousedown', function (d) {showMark('数据集中'+names[y_key]+'的最小二乘回归线',y_key) })
         .on('mouseover', function (d) { showMark('数据集中'+names[y_key]+'的最小二乘回归线',y_key) })
-        .on('mouseout', function (d) { tipMark.attr('class','notshow')});
+        .on('mouseout', function (d) { notshow()});
 
         cosineCorr = containerCorr.append("path")
         .on('mousedown', function (d) { showMark('两条回归线的夹角，夹角越大越不相关',4); })
         .on('mouseover', function (d) { showMark('两条回归线的夹角，夹角越大越不相关',4);})
-        .on('mouseout', function (d) { tipMark.attr('class','notshow')});
+        .on('mouseout', function (d) { notshow()});
 
         barCorr = svgCorr.append('line');
 
