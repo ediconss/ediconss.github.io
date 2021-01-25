@@ -170,8 +170,16 @@ table, td {
     left:60%;
     top:37px
 }
+.cut{
+  color: #fff;
+      background: black;
+      /* transform: translate(45px,702px); */
+}
 @media screen and (max-width: 1200px){
- 
+    .cut{
+        
+        transform: translate(45px,455px);
+    }
     .svgdiv{
         position:fixed; 
         height: 400px;

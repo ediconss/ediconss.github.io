@@ -29,7 +29,6 @@
     var tipCorr = d3.tip().attr('class', 'd3-tip').offset([-10, 0]);
     var tipMark = svgCorr.append("text").attr("text-anchor", "middle")
   
-    // svgCorr.append(tipMark)
     $(window).on('mouseup', tipCorr.hide);
     $(window).on('mouseup', tipMark.attr('class','notshow'));
 
@@ -71,24 +70,29 @@
         .style("fill", "url(#linear-gradient)")
         .attr("stroke-width", lineWidth)
         .attr('stroke', 'black')
-        function showMark(text){
+        function showMark(text,i){
             tipMark.attr('class','show')
             tipMark.html(text)
+            d3.select('#asource').attr('src','images/'+(i+1)+'.MP3');
+            $("#player")[0].load();
+            $("#player")[0].play(); /*播放*/
+            // $("#asource").src("")
+           
         }
      
         var regressionLineCorrX = containerCorr.append("line")
-        .on('mousedown', function (d) {showMark('数据集中'+names[x_key]+'的最小二乘回归线')  })
-        .on('mouseover', function (d) { showMark('数据集中'+names[x_key]+'的最小二乘回归线') })
+        .on('mousedown', function (d) {showMark('数据集中'+names[x_key]+'的最小二乘回归线',x_key)  })
+        .on('mouseover', function (d) { showMark('数据集中'+names[x_key]+'的最小二乘回归线',x_key) })
         .on('mouseout',function (d) { tipMark.attr('class','notshow')});
 
         regressionLineCorrY = containerCorr.append("line")
-        .on('mousedown', function (d) {showMark('数据集中'+names[y_key]+'的最小二乘回归线') })
-        .on('mouseover', function (d) { showMark('数据集中'+names[y_key]+'的最小二乘回归线') })
+        .on('mousedown', function (d) {showMark('数据集中'+names[y_key]+'的最小二乘回归线',y_key) })
+        .on('mouseover', function (d) { showMark('数据集中'+names[y_key]+'的最小二乘回归线',y_key) })
         .on('mouseout', function (d) { tipMark.attr('class','notshow')});
 
         cosineCorr = containerCorr.append("path")
-        .on('mousedown', function (d) { showMark('两条回归线的夹角，夹角越大越不相关'); })
-        .on('mouseover', function (d) { showMark('两条回归线的夹角，夹角越大越不相关');})
+        .on('mousedown', function (d) { showMark('两条回归线的夹角，夹角越大越不相关',4); })
+        .on('mouseover', function (d) { showMark('两条回归线的夹角，夹角越大越不相关',4);})
         .on('mouseout', function (d) { tipMark.attr('class','notshow')});
 
         barCorr = svgCorr.append('line');
@@ -351,7 +355,7 @@
 
         svgCorr.attr("width", w).attr("height", h);
 
-        xAxisGroupCorr.attr("transform", "translate(0," + (h - padding) + ")").call(xAxisCorr);
+        xAxisGroupCorr.attr("transform", "translate(0," + (h - padding-6) + ")").call(xAxisCorr);
         xAxisGroupBarCorr.attr("transform", "translate(0," + (hBar - padding+40) + ")").call(xAxisBarCorr);
         yAxisGroupCorr.attr("transform", "translate(" + padding + ",0)").call(yAxisCorr);
        

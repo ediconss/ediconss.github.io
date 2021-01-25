@@ -2,7 +2,8 @@
 var tipMark;
 var svg_ols;
 var img;
-function showMark(text){
+var cut;
+function showMark(text,i){
   tipMark.attr('class','show')
   if(text=='最小二乘回归线'){
     d3.select("#svg_ols").select('img').remove()
@@ -10,6 +11,9 @@ function showMark(text){
    img.attr('class','mathi')
     }
   tipMark.html(text)
+  d3.select('#asource').attr('src','../images/'+i+'.MP3');
+  $("#player")[0].load();
+  $("#player")[0].play();
 }
 function notshowMark(){
   tipMark.attr('class','notshow')
@@ -59,9 +63,9 @@ function notshowMark(){
       y_axis_ols = d3.svg.axis().scale(y_scale_ols).orient("left").ticks(5);
 
        tipMark = svg_ols.append("text").attr("text-anchor", "middle")
-      
+   
 
-    var x_axis_group_ols = svg_ols.append("g").attr("class", "x axis"),
+       var x_axis_group_ols = svg_ols.append("g").attr("class", "x axis"),
       y_axis_group_ols = svg_ols.append("g").attr("class", "y axis");
 
 
@@ -122,8 +126,8 @@ function notshowMark(){
         .enter()
         .append("line")
         .attr("class", "ols")
-        .attr('onmousedown', "showMark('最小二乘回归线')" )
-        .attr('onmouseover', "showMark('最小二乘回归线')")
+        .attr('onmousedown', "showMark('最小二乘回归线',6)" )
+        .attr('onmouseover', "showMark('最小二乘回归线',6)")
         .attr('onmouseout',"notshowMark()")
         .moveToBack();
 
@@ -137,8 +141,8 @@ function notshowMark(){
         .append("rect")
         .attr("r", 5)
         .attr("class", "sse")
-        .attr('onmousedown', "showMark('正方形的面积表示数据与回归线的误差平方')" )
-        .attr('onmouseover', "showMark('正方形的面积表示数据与回归线的误差平方')")
+        .attr('onmousedown', "showMark('正方形的面积表示数据与回归线的误差平方',7)" )
+        .attr('onmouseover', "showMark('正方形的面积表示数据与回归线的误差平方',7)")
         .attr('onmouseout', "notshowMark()")
         .moveToBack();
     }
@@ -382,20 +386,21 @@ function notshowMark(){
 
       x_scale_ols.range([padding, (w - padding)]);
       y_scale_ols.range([(h - padding), padding]);
-
+      
       svg_ols.attr("width", w).attr("height", h);
 
-      x_axis_group_ols.attr("transform", "translate(0," + (h - padding) + ")").call(x_axis_ols);
+      x_axis_group_ols.attr("transform", "translate(0," + (h - padding-6) + ")").call(x_axis_ols);
       y_axis_group_ols.attr("transform", "translate(" + padding + ",0)").call(y_axis_ols);
 
 
       clip_ols.attr("x", padding).attr("y", padding).attr("width", w - 2 * padding).attr("height", h - 2 * padding);
 
       xaxisTextOLS.attr("transform", "translate(" + (w / 2) + "," + (h+10 - padding / 4) + ")");
-      tipMark.attr("transform", "translate(" + (w / 2+15) + "," + (60) + ")");
-       
-      yaxisTextOLS.attr("transform", "translate(" + (padding / 4+8) + "," + (h / 2) + ")rotate(-90)");
+      tipMark.attr("transform", "translate(" + (w / 2) + "," + (60) + ")");
+   
 
+      yaxisTextOLS.attr("transform", "translate(" + (padding / 4+8) + "," + (h / 2) + ")rotate(-90)");
+ 
       statisticsCalcOLS(0);
     }
     drawOls();
