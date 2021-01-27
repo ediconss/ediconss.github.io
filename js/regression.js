@@ -28,7 +28,7 @@
 
     var tipCorr = d3.tip().attr('class', 'd3-tip').offset([-10, 0]);
     var tipMark = svgCorr.append("text").attr("text-anchor", "middle")
-  
+    var ac=1;
     $(window).on('mouseup', tipCorr.hide);
     $(window).on('mouseup', notshow());
 
@@ -65,7 +65,7 @@
         .enter().append("stop")
         .attr("offset", function (d, i) { return i / (pScaleCorr.range().length - 1); })
         .attr("stop-color", function (d) { return d; });
-
+  
     var legend = svgCorr.append("rect")
         .style("fill", "url(#linear-gradient)")
         .attr("stroke-width", lineWidth)
@@ -73,11 +73,12 @@
         function showMark(text,i){
             tipMark.attr('class','show')
             tipMark.html(text)
-            $("#player")[0].pause();
-            d3.select('#asource').attr('src','images/'+(i+1)+'.MP3');
-            $("#player")[0].load();
-            playPromise=$("#player")[0].play(); /*播放*/
+            $("#player"+ac)[0].pause();
+            // d3.select('#asource').attr('src','images/'+(i+1)+'.MP3');
+            // $("#player")[0].load();
+            playPromise=$("#player"+(i+1))[0].play(); /*播放*/
             if (playPromise) {
+                ac=i+1;
                 playPromise.then(() => {
                     // 音频加载成功
                     // 音频的播放需要耗时
@@ -96,38 +97,9 @@
            
         }
 
-        function play(i) {
-            // 音频文件
-            var src = "./rank.mp3";
-            // 初始化Aduio
-            var audio = new Audio();
-
-            var playPromise;
-
-            audio.src = src;
-
-            playPromise = audio.play();
-
-            if (playPromise) {
-                playPromise.then(() => {
-                    // 音频加载成功
-                    // 音频的播放需要耗时
-                    setTimeout(() => {
-                        // 后续操作
-                        console.log("done.");
-                    }, audio.duration * 1000); // audio.duration 为音频的时长单位为秒
-
-
-                }).catch((e) => {
-                    // 音频加载失败
-                });
-            }
-
-
-        }
         function notshow(){
             tipMark.attr('class','notshow')
-            $("#player")[0].pause();
+            $("#player"+ac)[0].pause();
         }
         var regressionLineCorrX = containerCorr.append("line")
         .on('mousedown', function (d) {showMark('数据集中'+names[x_key]+'的最小二乘回归线',x_key)  })

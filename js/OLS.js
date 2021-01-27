@@ -3,6 +3,7 @@ var tipMark;
 var svg_ols;
 var img;
 var cut;
+var ac=0;
 function showMark(text,i){
   tipMark.attr('class','show')
   if(text=='最小二乘回归线'){
@@ -11,16 +12,19 @@ function showMark(text,i){
    img.attr('class','mathi')
     }
   tipMark.html(text)
-  d3.select('#asource').attr('src','../images/'+i+'.MP3');
-  $("#player")[0].load();
-  playPromise=$("#player")[0].play(); /*播放*/
+  // d3.select('#asource').attr('src','../images/'+i+'.MP3');
+  // $("#player"+i)[0].load();
+  
+  playPromise=$("#player"+i)[0].play(); /*播放*/
             if (playPromise) {
+              ac=i;
                 playPromise.then(() => {
                     // 音频加载成功
                     // 音频的播放需要耗时
                     setTimeout(() => {
                         // 后续操作
-                        console.log("done.");
+                        // console.log("done.");
+                       
                     }, audio.duration * 1000); // audio.duration 为音频的时长单位为秒
 
 
@@ -32,7 +36,7 @@ function showMark(text,i){
 function notshowMark(){
   tipMark.attr('class','notshow')
   img.remove()
-  $("#player")[0].pause();
+  $("#player"+ac)[0].pause();
 }
   window.onload = function () {
     var parent = d3.select('#svg_ols')
