@@ -13,7 +13,21 @@ function showMark(text,i){
   tipMark.html(text)
   d3.select('#asource').attr('src','../images/'+i+'.MP3');
   $("#player")[0].load();
-  $("#player")[0].play();
+  playPromise=$("#player")[0].play(); /*播放*/
+            if (playPromise) {
+                playPromise.then(() => {
+                    // 音频加载成功
+                    // 音频的播放需要耗时
+                    setTimeout(() => {
+                        // 后续操作
+                        console.log("done.");
+                    }, audio.duration * 1000); // audio.duration 为音频的时长单位为秒
+
+
+                }).catch((e) => {
+                    // 音频加载失败
+                });
+            }
 }
 function notshowMark(){
   tipMark.attr('class','notshow')
@@ -127,6 +141,7 @@ function notshowMark(){
         .enter()
         .append("line")
         .attr("class", "ols")
+        .attr('onclick', "showMark('最小二乘回归线',6)" )
         .attr('onmousedown', "showMark('最小二乘回归线',6)" )
         .attr('onmouseover', "showMark('最小二乘回归线',6)")
         .attr('onmouseout',"notshowMark()")
@@ -142,6 +157,7 @@ function notshowMark(){
         .append("rect")
         .attr("r", 5)
         .attr("class", "sse")
+        .attr('onclick', "showMark('正方形的面积表示数据与回归线的误差平方',7)" )
         .attr('onmousedown', "showMark('正方形的面积表示数据与回归线的误差平方',7)" )
         .attr('onmouseover', "showMark('正方形的面积表示数据与回归线的误差平方',7)")
         .attr('onmouseout', "notshowMark()")

@@ -73,11 +73,57 @@
         function showMark(text,i){
             tipMark.attr('class','show')
             tipMark.html(text)
+            $("#player")[0].pause();
             d3.select('#asource').attr('src','images/'+(i+1)+'.MP3');
             $("#player")[0].load();
-            $("#player")[0].play(); /*播放*/
+            playPromise=$("#player")[0].play(); /*播放*/
+            if (playPromise) {
+                playPromise.then(() => {
+                    // 音频加载成功
+                    // 音频的播放需要耗时
+                    setTimeout(() => {
+                        // 后续操作
+                        console.log("done.");
+                    }, audio.duration * 1000); // audio.duration 为音频的时长单位为秒
+
+
+                }).catch((e) => {
+                    // 音频加载失败
+                });
+            }
+
             // $("#asource").src("")
            
+        }
+
+        function play(i) {
+            // 音频文件
+            var src = "./rank.mp3";
+            // 初始化Aduio
+            var audio = new Audio();
+
+            var playPromise;
+
+            audio.src = src;
+
+            playPromise = audio.play();
+
+            if (playPromise) {
+                playPromise.then(() => {
+                    // 音频加载成功
+                    // 音频的播放需要耗时
+                    setTimeout(() => {
+                        // 后续操作
+                        console.log("done.");
+                    }, audio.duration * 1000); // audio.duration 为音频的时长单位为秒
+
+
+                }).catch((e) => {
+                    // 音频加载失败
+                });
+            }
+
+
         }
         function notshow(){
             tipMark.attr('class','notshow')
